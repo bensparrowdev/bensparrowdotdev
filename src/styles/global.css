@@ -1,0 +1,133 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap');
+
+/* set global styles */
+html, body {
+  @apply h-full w-full;
+}
+
+body {
+  @apply font-poppins text-primary bg-secondary dark:text-primary_dark dark:bg-secondary_dark duration-200 md:px-8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  @apply bg-accent2 dark:bg-accent2_dark;
+}
+
+p {
+  @apply text-base font-normal text-body dark:text-body_dark mb-4;
+}
+
+h1 {
+  @apply text-4xl sm:text-6xl mb-8;
+}
+h2 {
+  @apply text-5xl;
+}
+h3 {
+  @apply text-4xl;
+}
+h4 {
+  @apply text-3xl;
+}
+h5 {
+  @apply text-2xl;
+}
+h6 {
+  @apply text-xl;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold leading-normal;
+}
+
+button {
+  @apply selection:bg-opacity-0 focus-visible:outline-body dark:focus-visible:outline-secondary_dark;
+}
+
+header a, header span {
+  @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-150 ease-in text-2xl font-light;
+}
+
+/* CUSTOM CLASSES */
+.container-lg {
+  @apply max-w-screen-lg mx-auto;
+}
+
+.container-md {
+  @apply max-w-screen-md mx-auto;
+}
+
+/* dark-mode switch */
+.toggle-switch {
+	margin:0;
+	padding:0;
+	width:48px;
+	height:28px;
+	border:none;
+	outline:none;
+	overflow:hidden;
+	position:relative;
+	border-radius:14px;
+	display:inline-block;
+	background: #021013;
+	@apply dark:w-12 dark:bg-primary_dark;
+}
+.toggle-switch,
+.toggle-switch:before,
+.toggle-switch:after {
+	@apply transition-all duration-200 ease-in-out;
+}
+.toggle-switch:before {
+	@apply top-1 left-6 content-[""] w-5 h-5 block absolute rounded-xl bg-secondary;
+	@apply dark:left-1 dark:bg-secondary_dark;
+}
+.toggle-switch:after {
+	@apply content-[""] top-[14px] right-[2px] w-[1px] h-[1px] block absolute rounded-[0.5px] bg-secondary_dark;
+	@apply dark:top-[-2px] dark:right-[2px] dark:w-8 dark:h-8 dark:rounded-2xl dark:bg-primary_dark;
+}
+.toggle-switch:focus,
+.toggle-switch:focus:after,
+.toggle-switch:active,
+.toggle-switch:active:after,
+.toggle-switch:hover,
+.toggle-switch:hover:after {
+	@apply bg-body;
+}
+
+.toggle-switch:focus,
+.toggle-switch:focus:after,
+.toggle-switch:hover,
+.toggle-switch:hover:after,
+.toggle-switch:active,
+.toggle-switch:active:after {
+	@apply dark:bg-body_dark;
+}
+.noselect {
+	@apply select-none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+}
+.disableEasingTemporarily,
+.disableEasingTemporarily:after,
+.disableEasingTemporarily:before {
+  -o-transition-property:none!important;
+  -moz-transition-property:none!important;
+  -ms-transition-property:none!important;
+  -webkit-transition-property:none!important;
+  transition-property:none!important;
+  -o-transform:none!important;
+  -moz-transform:none!important;
+  -ms-transform:none!important;
+  -webkit-transform:none!important;
+  transform:none!important;
+  -webkit-animation:none!important;
+  -moz-animation:none!important;
+  -o-animation:none!important;
+  -ms-animation:none!important;
+  animation:none!important;
+}

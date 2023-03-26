@@ -1,0 +1,14 @@
+---
+import Accordion from '../components/Accordion';
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Experience | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="web developer">
+	<div class="container-lg mx-auto mt-12 sm:mt-36">
+    <h1>Professional Experience</h1>
+    <div class="container-md">
+      <Accordion title="Front End Developer" company="Statement Agency" client:load />
+      <Accordion title="Software Developer" company="Logical Resources" client:load />
+    </div>
+	</div>
+</Layout>

@@ -1,0 +1,151 @@
+---
+import ThemeSwitch from '../layout/ThemeSwitch'
+import { FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
+---
+
+<header class="py-6 sm:py-12">
+  <div class="flex items-center justify-between">
+    <div>
+      <a href="/" class="cursor-pointer"><h4 class="font-eb_Garamond sm:text-5xl">bensparrowdev.</h4></a>
+    </div>
+    <div>
+      <nav class="flex items-center gap-x-12">
+        <a class="hidden md:block cursor-pointer" href="https://drive.google.com/file/d/1nTBhdXiDH3TqsEdZnMotrqeBe0CK452U/view?usp=sharing" target="_blank" rel="noreferrer">view cv</a>
+        <a class="header_trigger dark:hover:border-secondary z-20 dark:selection:bg-invisible selection:bg-invisible">
+          <span class="menu">menu</span>
+          <span class="close">close</span>
+        </a>
+        <div class="hidden md:block">
+          <ThemeSwitch client:idle />
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="wrapper flex flex-col lg:flex-row absolute top-0 left-0 w-full overflow-hidden h-0 z-10">
+    <div class="menu-first-half h-2/3 lg:h-full lg:w-7/12 bg-secondary dark:bg-secondary_dark flex flex-col items-start justify-between lg:items-end md:justify-center container lg:pr-40 pb-6">
+      <div class="pt-9 sm:pt-16 md:hidden">
+        <ThemeSwitch client:idle />
+      </div>
+      <div>
+        <a class="border-none" href="/">
+          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Projects</h3>
+        </a>
+        <a class="border-none" href="/experience">
+          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Experience</h3>
+        </a>
+        <a class="border-none" href="/">
+          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">About</h3>
+        </a>
+        <a class="border-none" href="/">
+          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl">Contact</h3>
+        </a>
+      </div>
+    </div>
+    <div class="menu-second-half h-1/3 lg:h-full lg:w-5/12 bg-accent dark:bg-accent_dark flex flex-col items-start justify-center lg:pl-20">
+      <div class="container">
+        <h6>email me at</h6>
+        <p class="mb-6">bensparrowdev@gmail.com</p>
+        <h6>follow me on</h6>
+        <div class="flex gap-x-6 mt-3 text-body dark:text-body_dark">
+          <FaTwitter size={25} className="cursor-pointer hover:text-[#00ACEE] transition-colors duration-200 ease-in" />
+          <FaLinkedinIn size={25} className="cursor-pointer hover:text-[#0077b5] transition-colors duration-200 ease-in" />
+          <FaFacebookF size={25} className="cursor-pointer hover:text-[#3b5998] transition-colors duration-200 ease-in" />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const open = document.querySelector('.menu'),
+   close = document.querySelector('.close'),
+   wrapper = document.querySelector('.wrapper'),
+   firstHalf = document.querySelector('.menu-first-half'),
+   secondHalf = document.querySelector('.menu-second-half')
+
+  open.addEventListener('click', () => {
+    wrapper.classList.add('h-full')
+    wrapper.classList.remove('h-0')
+
+    open.classList.add('menu--hide')
+    close.classList.add('close--show')
+    firstHalf.classList.add('menu-first-half--show')
+    secondHalf.classList.add('menu-second-half--show')
+  })
+  
+  close.addEventListener('click', () => {
+    open.classList.remove('menu--hide')
+    close.classList.remove('close--show')
+    firstHalf.classList.remove('menu-first-half--show')
+    secondHalf.classList.remove('menu-second-half--show')
+  })
+
+  firstHalf.addEventListener('transitionend', () => {
+    if (!firstHalf.classList.contains('menu-first-half--show')) {
+      wrapper.classList.remove('h-full')
+      wrapper.classList.add('h-0')
+    } 
+  })
+</script>
+
+<style>
+  .header_trigger {
+    position: relative;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: end;
+  }
+
+  .header_trigger span {
+    display: inline-block;
+    transition: all .3s ease-out;
+  }
+
+  .menu {
+    transform: translate(0);
+  }
+  .menu--hide {
+    transform: translate(0, 100%);
+  }
+  
+  .close {
+    position: absolute;
+    transform: translate(-100%, -100%);
+    transition: all 200;
+  }
+
+  .close--show {
+    transform: translate(-100%, 0%);
+  }
+
+  .menu-first-half {
+    transition: all .3s ease-out;
+    transform: translate(100%, 0%);
+  }
+  
+  .menu-second-half {
+    transition: all .3s ease-out;
+    transform: translate(-100%, 0%);
+  }
+  
+  @media (min-width: 1024px) {
+    .menu-first-half {
+      transform: translate(0%, -100%);
+    }
+    .menu-second-half {
+      transform: translate(0%, 100%);
+    }
+  }
+  
+  .menu-first-half--show {
+    transform: translate(0%, 0%);
+  }
+  .menu-second-half--show {
+    transform: translate(0%, 0%);
+  }
+</style>

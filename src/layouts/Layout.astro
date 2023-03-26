@@ -1,0 +1,20 @@
+---
+import MainHead from '../components/layout/MainHead.astro';
+import Header from '../components/layout/Header.astro';
+
+const { title = "bensparrowdev Portfolio", description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.", bgText = "web developer" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+	<MainHead {title} {description} />
+	<body>
+		<main class="container">
+			<Header />
+			<slot />
+		</main >
+		<h1 class="font-eb_Garamond text-accent dark:text-bg_text_dark opacity-50 hidden sm:block text-[12rem] absolute break-normal whitespace-nowrap left-0 bottom-0 m-0 p-0 -z-10">
+			{bgText}
+		</h1>
+	</body>
+</html>
