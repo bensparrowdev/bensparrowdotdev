@@ -4,11 +4,16 @@ interface Button {
   type: string
 }
 
-export default function Button({ text = "Click Me", link = "/", type = "btn" }:Button) {
+export default function Button({
+  text = "Click Me",
+  link,
+  type = "btn",
+}: Button) {
   if (type === "btn") {
     return (
-    <a href={link}>
-      <button className="py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-200
+      <a href={link}>
+        <button
+          className="py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-200
         text-accent 
         bg-primary
         hover:text-body
@@ -17,15 +22,16 @@ export default function Button({ text = "Click Me", link = "/", type = "btn" }:B
         dark:bg-primary_dark 
         dark:hover:text-body_dark 
         dark:hover:bg-accent_dark"
-      >
-        {text}
-      </button>
-    </a>
-    )
+        >
+          {text}
+        </button>
+      </a>
+    );
   } else if (type === "code-block") {
     return (
       <a href={link}>
-        <button className="py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
+        <button
+          className="py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
           text-base
           lowercase
           font-ubuntu_mono
@@ -41,6 +47,6 @@ export default function Button({ text = "Click Me", link = "/", type = "btn" }:B
           {text}
         </button>
       </a>
-    )
+    );
   }
 }
