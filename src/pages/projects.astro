@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Projects from '../components/Projects'
+---
+
+<Layout title="Projects | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="bookworm">
+  <section class="container-lg mx-auto">
+    <h1>Projects.</h1>
+    <div class="container-lg">
+
+      <Projects client:visible />
+
+    </div>
+  </section>
+</Layout>

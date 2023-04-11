@@ -15,7 +15,7 @@ body {
 }
 
 ::selection {
-  @apply bg-accent2 dark:bg-accent2_dark;
+  @apply bg-accent2 text-body dark:bg-accent2_dark dark:text-body_dark;
 }
 
 p {

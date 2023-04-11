@@ -9,12 +9,12 @@ const { title = "bensparrowdev Portfolio", description = "Hi, I'm Ben Sparrow an
 <html lang="en" class="dark">
 	<MainHead {title} {description} />
 	<body>
-		<main class="container">
+		<main class="container pb-12">
 			<Header />
 			<slot />
+			<h1 class="font-eb_Garamond text-accent dark:text-bg_text_dark opacity-75 hidden sm:block text-[10vw] fixed break-normal whitespace-nowrap left-2 -bottom-4  m-0 p-0 -z-10">
+				{bgText}
+			</h1>
 		</main >
-		<h1 class="font-eb_Garamond text-accent dark:text-bg_text_dark opacity-50 hidden sm:block text-[15vh] absolute break-normal whitespace-nowrap left-0 bottom-0 m-0 p-0 -z-10">
-			{bgText}
-		</h1>
 	</body>
 </html>

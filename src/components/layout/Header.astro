@@ -3,15 +3,15 @@ import ThemeSwitch from '../layout/ThemeSwitch'
 import { FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
 ---
 
-<header class="py-6 sm:py-12">
-  <div class="flex items-center justify-between">
+<header class="py-6 sm:py-12 mb-12 md:mb-20">
+  <div class="flex items-center justify-between select-none">
     <div>
       <a href="/" class="cursor-pointer"><h4 class="font-eb_Garamond sm:text-5xl">bensparrowdev.</h4></a>
     </div>
     <div>
       <nav class="flex items-center gap-x-12">
         <a class="hidden md:block cursor-pointer" href="https://drive.google.com/file/d/1nTBhdXiDH3TqsEdZnMotrqeBe0CK452U/view?usp=sharing" target="_blank" rel="noreferrer">view cv</a>
-        <a class="header_trigger dark:hover:border-secondary z-20 dark:selection:bg-invisible selection:bg-invisible">
+        <a class="header_trigger dark:hover:border-secondary z-20">
           <span class="menu">menu</span>
           <span class="close">close</span>
         </a>
@@ -27,16 +27,16 @@ import { FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
         <ThemeSwitch client:idle />
       </div>
       <div>
-        <a class="border-none" href="/">
+        <a class="border-none" href="/projects">
           <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Projects</h3>
         </a>
         <a class="border-none" href="/experience">
           <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Experience</h3>
         </a>
-        <a class="border-none" href="/">
+        <a class="border-none" href="/about">
           <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">About</h3>
         </a>
-        <a class="border-none" href="/">
+        <a class="border-none" href="/contact">
           <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl">Contact</h3>
         </a>
       </div>
@@ -44,12 +44,18 @@ import { FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa'
     <div class="menu-second-half h-1/3 lg:h-full lg:w-5/12 bg-accent dark:bg-accent_dark flex flex-col items-start justify-center lg:pl-20">
       <div class="container">
         <h6>email me at</h6>
-        <p class="mb-6">bensparrowdev@gmail.com</p>
-        <h6>follow me on</h6>
+        <a href="mailto:bensparrowdev@gmail.com" target="_blank" rel="noreferrer" class="text-base">bensparrowdev@gmail.com</a>
+        <h6 class="mt-6">follow me on</h6>
         <div class="flex gap-x-6 mt-3 text-body dark:text-body_dark">
-          <FaTwitter size={25} className="cursor-pointer hover:text-[#00ACEE] transition-colors duration-200 ease-in" />
-          <FaLinkedinIn size={25} className="cursor-pointer hover:text-[#0077b5] transition-colors duration-200 ease-in" />
-          <FaFacebookF size={25} className="cursor-pointer hover:text-[#3b5998] transition-colors duration-200 ease-in" />
+          <a href="https://twitter.com/bensparrowdev" target="_blank" rel="noreferrer" class="border-0 hover:border-0">
+            <FaTwitter size={25} className="cursor-pointer hover:text-[#00ACEE] transition-colors duration-200 ease-in" />
+          </a>
+          <a href="https://www.linkedin.com/in/ben-sparrow/" target="_blank" rel="noreferrer" class="border-0 hover:border-0">
+            <FaLinkedinIn size={25} className="cursor-pointer hover:text-[#0077b5] transition-colors duration-200 ease-in" />
+          </a>
+          <a href="https://www.facebook.com/bensparrowdev/" target="_blank" rel="noreferrer" class="border-0 hover:border-0">
+            <FaFacebookF size={25} className="cursor-pointer hover:text-[#3b5998] transition-colors duration-200 ease-in" />
+          </a>
         </div>
       </div>
     </div>
