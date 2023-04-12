@@ -1,5 +1,8 @@
-/* import fonts */
+/* import fonts & tailwind */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* set global styles */
 html, body {
@@ -131,4 +134,13 @@ header a, header span {
   -o-animation:none!important;
   -ms-animation:none!important;
   animation:none!important;
+}
+
+
+/* CARDS */
+/* .test-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.1) 100%, rgba(0, 0, 0, 0.78) 0%);
+} */
+.test-bg:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
 }

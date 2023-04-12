@@ -6,15 +6,15 @@ function Card({ image, title = "Project name", description }) {
 
   return (
     <div
-      className="bg-accent_dark h-96 rounded-md mb-6 relative object-cover"
+      className="h-96 rounded-md mb-6 relative object-cover flex items-end p-6 cursor-pointer group test-bg bg-black/10"
       style={{ height: wrapperHt[randomNum] }}
     >
       <img
         src={image.src}
         alt={image.alt}
-        className="absolute left-0 top-0 object-cover w-full h-full"
+        className="absolute left-0 top-0 object-cover w-full h-full rounded-md -z-10"
       />
-      <div>
+      <div className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
         <h6>{title}</h6>
         <span>{description}</span>
       </div>

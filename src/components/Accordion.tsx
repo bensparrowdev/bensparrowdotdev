@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { BsLink45Deg } from "react-icons/Bs";
-import { MdLocationPin } from "react-icons/Md";
+import { BsLink45Deg } from "react-icons/bs";
+import { MdLocationPin } from "react-icons/md";
 import Button from "./Button";
 
 export default function Accordion({
