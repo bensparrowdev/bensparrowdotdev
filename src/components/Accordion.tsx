@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { BsLink45Deg } from "react-icons/bs";
-import { MdLocationPin } from "react-icons/md";
 import Button from "./Button";
 
 export default function Accordion({
@@ -54,13 +52,13 @@ export default function Accordion({
         <div className="flex mb-4 gap-4">
           <div className="flex items-center">
             <span className="text-body dark:text-body_dark mr-1">
-              <MdLocationPin size={20} />
+              <i className="fa-solid fa-location-dot"></i>
             </span>
             <span>{location}</span>
           </div>
           <div className="flex items-center">
             <span className="text-body dark:text-body_dark mr-1">
-              <BsLink45Deg size={20} />
+              <i className="fa-solid fa-link"></i>
             </span>
             <a href={link}>{url}</a>
           </div>
