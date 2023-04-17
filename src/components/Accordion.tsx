@@ -68,8 +68,8 @@ export default function Accordion({
           <img src={image.src} alt={image.alt} className="h-fit" width="125" />
         </div>
         <div className="flex flex-wrap gap-3 ">
-          {techStack.map((t) => {
-            return <Button text={t} type="code-block" />;
+          {techStack.map((t, i) => {
+            return <Button key={i} text={t} type="code-block" />;
           })}
         </div>
       </div>

@@ -1,20 +1,48 @@
 import { useState } from "react";
 import Tabs from "./Tabs";
 import Card from "./Card";
+import SideDrawer from "./SideDrawer";
 
 export default function Projects() {
   const [currentTab, setCurrentTab] = useState<string>("all");
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+
+  const renderCards = (data) => {
+    let filteredData = [];
+
+    if (currentTab === "all") filteredData = data;
+    if (currentTab === "website")
+      filteredData = data.filter((proj) => proj.tags.includes("website"));
+    if (currentTab === "app")
+      filteredData = data.filter((proj) => proj.tags.includes("app"));
+
+    return filteredData;
+  };
 
   return (
     <>
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <div className="columns-1 sm:columns-2 gap-6">
-        {projectData.map((p) => {
+        {renderCards(projectData).map((p, i) => {
           return (
-            <Card image={p.image} title={p.title} description={p.description} />
+            <Card
+              key={i}
+              image={p.image}
+              title={p.title}
+              description={p.description}
+              drawerOpen={drawerOpen}
+              setDrawerOpen={setDrawerOpen}
+            />
           );
         })}
       </div>
+      {/* <div
+        className={`transition-transform duration-200 ${
+          drawerOpen ? "translate-x-0" : "translate-x-4"
+        }`}
+      > */}
+      <SideDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
+      {/* </div> */}
     </>
   );
 }
@@ -26,6 +54,7 @@ interface ProjectData {
   };
   title: string;
   description: string;
+  tags: string[];
 }
 
 const projectData: ProjectData[] = [
@@ -37,6 +66,7 @@ const projectData: ProjectData[] = [
     title: "proj 1",
     description:
       "Ad dolore fugiat esse elit anim occaecat tempor irure exercitation commodo laborum ut. Ut in dolore ipsum nostrud occaecat qui eu.",
+    tags: ["website"],
   },
   {
     image: {
@@ -45,15 +75,16 @@ const projectData: ProjectData[] = [
     },
     title: "proj 2",
     description: "Enim cupidatat ut ad excepteur non cupidatat nostrud.",
+    tags: ["app"],
   },
   {
     image: {
       src: "https://cdn.dribbble.com/userupload/6168841/file/original-9adead43a77183822210ea6a97f72314.png?compress=1&resize=1024x768",
       alt: "",
     },
-
     title: "proj 3",
     description: "Quis voluptate laborum sit velit laborum Lorem mollit.",
+    tags: ["website", "app"],
   },
   {
     image: {
@@ -62,5 +93,6 @@ const projectData: ProjectData[] = [
     },
     title: "proj 4",
     description: "Quis voluptate laborum sit velit laborum Lorem mollit.",
+    tags: ["website"],
   },
 ];

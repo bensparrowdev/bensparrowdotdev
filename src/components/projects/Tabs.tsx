@@ -23,13 +23,13 @@ export default function Tabs({ currentTab, setCurrentTab }) {
         </label>
         <label
           htmlFor="websites"
-          className={currentTab === "websites" ? tabActive : tabInactive}
+          className={currentTab === "website" ? tabActive : tabInactive}
         >
           Websites
           <input
             type="radio"
             name="filter"
-            value="websites"
+            value="website"
             id="websites"
             className="hidden"
             onChange={(e) => setCurrentTab(e.target.value)}
@@ -38,13 +38,13 @@ export default function Tabs({ currentTab, setCurrentTab }) {
         </label>
         <label
           htmlFor="apps"
-          className={currentTab === "apps" ? tabActive : tabInactive}
+          className={currentTab === "app" ? tabActive : tabInactive}
         >
           Apps
           <input
             type="radio"
             name="filter"
-            value="apps"
+            value="app"
             id="apps"
             className="hidden"
             onChange={(e) => setCurrentTab(e.target.value)}
