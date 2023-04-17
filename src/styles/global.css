@@ -138,9 +138,12 @@ header a, header span {
 
 
 /* CARDS */
-/* .test-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 100%, rgba(0, 0, 0, 0.78) 0%);
-} */
-.test-bg:hover {
+.card-bg:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
+}
+
+/* Misc */
+
+aside > div::-webkit-scrollbar {
+  display: none;
 }

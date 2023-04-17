@@ -11,7 +11,7 @@ function Card({
 
   return (
     <div
-      className="rounded-md mb-6 relative object-cover flex items-end p-6 cursor-pointer group test-bg bg-black/10"
+      className="rounded-md mb-6 relative object-cover flex items-end p-6 cursor-pointer group card-bg bg-black/10"
       style={{ height: height + "px" }}
       onClick={() => setDrawerOpen(!drawerOpen)}
     >
