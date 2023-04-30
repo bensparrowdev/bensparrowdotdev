@@ -1,0 +1,70 @@
+
+<section class="container-lg mx-auto">
+  <h3 class="text-left">What I listen to</h3>
+  <div class="playlist-list">
+    <ul class="relative">
+
+      <li class="before:border-primary dark:before:border-primary_dark">
+        <h4 class="group">
+          <a href="https://open.spotify.com/playlist/4JTxRKKdtpAlLLVZRQvuRZ?si=cadba0c125884ebc" rel="external" target="_blank">
+            deepCode 
+            <i class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"></i>
+          </a>
+        </h4>
+        <p>Et aliquip esse ullamco proident ea culpa do id. Nostrud velit duis cupidatat qui Lorem consequat magna minim. esse ullamco proident ea culpa do id.</p>
+      </li>
+
+      <li class="before:border-primary dark:before:border-primary_dark">
+        <h4 class="group">
+          <a href="https://open.spotify.com/playlist/37i9dQZF1DX6GJXiuZRisr?si=bc845059d94b4628" rel="external" target="_blank">
+            Night Rider 
+            <i class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"></i>
+          </a>
+        </h4>
+        <p>Et aliquip esse ullamco proident ea culpa do id. Nostrud velit duis cupidatat qui esse ullamco proident ea culpa do id. Lorem consequat magna minim.</p>
+      </li>
+
+      <li class="before:border-primary dark:before:border-primary_dark"> 
+        <h4 class="group">
+          <a href="https://open.spotify.com/playlist/1elrm0RApz9X4flGk84PCc?si=b57396f21d2d4e0c" rel="external" target="_blank">
+            oldSchoolRock 
+            <i class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"></i>
+          </a>
+        </h4>
+        <p>Et aliquip esse ullamco proident ea culpa do id. Nostrud velit duis cupidatat qui Lorem consequat magna minim.</p>
+      </li>
+
+      <li class="before:border-primary dark:before:border-primary_dark">
+        <h4 class="group">
+          <a href="https://open.spotify.com/playlist/2wSNKxLM217jpZnkAgYZPH?si=e31e031076554a26" rel="external" target="_blank">
+            Anjunadeep New Releases 
+            <i class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"></i>
+          </a>
+        </h4>
+        <p>Et aliquip esse ullamco proident ea culpa do id. Nostrud velit duis cupidatat qui Lorem consequat magna minim.</p>
+      </li>
+
+
+    </ul>
+  </div>
+</section>
+
+<style type="text/css">
+  .playlist-list ul li{
+    @apply mb-8 text-center sm:text-left sm:ml-12 flex flex-col;
+  }
+
+  .playlist-list ul li h4{
+    @apply mb-4;
+  }
+
+  .playlist-list ul li h4 i{
+    @apply text-[#1DB954] -ml-6 opacity-0 transition-all ease-in-out duration-200;
+  }
+
+  .playlist-list ul li::before{
+    content: "";
+    @apply hidden  sm:block w-6 h-6 absolute left-0 mt-3 border-4 rounded-full;
+  }
+
+</style>

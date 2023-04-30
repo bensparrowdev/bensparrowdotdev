@@ -1,0 +1,89 @@
+---
+---
+
+<section class="container-lg mx-auto">
+  <h3 class="text-center">My Journey</h3>
+
+  <div class="w-full overflow-hidden timeline-section">
+
+
+    <ul>
+
+
+      <li class="bg-primary after:border-primary after:bg-secondary dark:bg-primary_dark dark:after:border-primary_dark dark:after:bg-secondary_dark">
+        <div>
+          <time>2019</time>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Incidunt nostrum quidem eius repudiandae nam, nemo fuga
+            architecto possimus id at rem beatae consequuntur dolor commodi.
+          </p>
+        </div>
+      </li>
+      <li class="bg-primary after:border-primary after:bg-secondary dark:bg-primary_dark dark:after:border-primary_dark dark:after:bg-secondary_dark">
+        <div>
+          <time>2020</time>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Incidunt nostrum quidem eius repudiandae nam, nemo fuga
+            architecto possimus id at rem beatae consequuntur dolor commodi.
+          </p>
+        </div>
+      </li>
+      <li class="bg-primary after:border-primary after:bg-secondary dark:bg-primary_dark dark:after:border-primary_dark dark:after:bg-secondary_dark">
+        <div>
+          <time>2022</time>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Incidunt nostrum quidem eius repudiandae nam, nemo fuga
+            architecto possimus id at rem beatae consequuntur dolor commodi.
+          </p>
+        </div>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+</section>
+
+<style type="text/css">
+.timeline-section ul li {
+  @apply list-none relative w-full my-0 mx-auto;
+}
+
+/* timeline nodes */
+.timeline-section ul li::after {
+  content: "";
+  @apply absolute -left-[10px] top-6 w-6 h-6 rounded-full border-4;
+}
+
+/* text blocks */
+.timeline-section ul li div {
+  @apply relative bottom-0 p-6;
+}
+
+/* position of odd text blocks */
+.timeline-section ul li:nth-child(odd) div {
+  @apply -left-full text-right
+}
+</style>
+
+
+
+
+
+<script type="application/javascript">
+  const setWidth = () => {
+    const contentWidth = document.querySelector('.timeline-section').offsetWidth;
+    const dateBlocks = document.querySelectorAll('.timeline-section div');
+    console.log(contentWidth / 2)
+    dateBlocks.forEach(block => {
+      block.style.width = (contentWidth / 2) + "px";
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', setWidth)
+  window.addEventListener('resize', setWidth)
+</script>
