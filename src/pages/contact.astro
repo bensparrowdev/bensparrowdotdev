@@ -1,13 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button'
 ---
 
 <Layout title="Contact | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="get in touch">
 	<section class="container-lg mx-auto mb-64">
-    <h1>Contact.</h1>
-    <div class="container-md">
-      
-    </div>
-	</section>
+        <h1>Contact.</h1>
+        <div class="mb-8">
+            <p>Have an amazing new project you need help with? Get in touch using the form below or send me an email instead at <Button type="code-block" text="bensparrowdev@gmail.com" link="mailto:bensparrowdev@gmail.com" /></p>
+        </div>
 
+        <div class="grid grid-cols-2 gap-4">
+
+            <form action="/contact" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true"
+            class="contact-form">
+                <input type="hidden" name="contact" value="contactForm" />
+                <span class="hidden">
+                    <label>
+                        Don’t fill this out if you’re human: <input name="bot-field" />
+                    </label>
+                </span>
+
+                <label for="full-name" hidden>Name:</label>
+                <input type="text" name="full-name" id="full-name" placeholder="Full Name" inputmode="text" required autofocus 
+                class="dark:focus:bg-secondary_dark dark:border-accent_dark dark:text-primary_dark dark:placeholder:text-body_dark">
+
+                <label for="email" hidden>Email:</label>
+                <input type="email" name="email" id="email" placeholder="Email" inputmode="email" required
+                class="dark:focus:bg-secondary_dark dark:border-accent_dark dark:text-primary_dark dark:placeholder:text-body_dark">
+                
+                <label for="message" hidden>Message:</label>
+                <textarea name="message" id="message" rows="7" cols="40" placeholder="Message" required
+                class="dark:focus:bg-secondary_dark dark:border-accent_dark dark:text-primary_dark dark:placeholder:text-body_dark"></textarea>
+
+                <div data-netlify-recaptcha="true"></div>
+
+                <Button type="btn" text="Send" />
+            </form>
+
+            <div class="flex items-end justify-center pb-20">
+                <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+                    <p class="mb-0">You can also find me on:</p>
+                    <a href="https://twitter.com/bensparrowdev" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-twitter fa-xl hover:text-[#00ACEE] transition-colors duration-150 ease-in"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ben-sparrow/" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-linkedin-in fa-xl hover:text-[#0077b5] transition-colors duration-150 ease-in"></i>
+                    </a>
+                    <a href="https://github.com/bensparrowdev" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-github fa-xl hover:text-gray-700 transition-colors duration-150 ease-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</section>
 </Layout>
+
+<style>
+    .contact-form {
+        
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        @apply w-full my-2 p-4 rounded border-2 focus:outline-none backdrop-blur-sm bg-transparent focus:bg-secondary border-accent text-primary placeholder:text-body;
+    }
+
+    .contact-form textarea{
+        resize: none;
+    }
+</style>
