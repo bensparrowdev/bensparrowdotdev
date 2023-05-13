@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button'
+
+const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
 ---
 
 <Layout title="Contact | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="get in touch">
@@ -33,7 +35,7 @@ import Button from '../components/Button'
                 <textarea name="message" id="message" rows="7" cols="40" placeholder="Message" required
                 class="dark:focus:bg-secondary_dark dark:border-accent_dark dark:text-primary_dark dark:placeholder:text-body_dark"></textarea>
 
-                <div data-netlify-recaptcha="true"></div>
+                <div class="g-recaptcha" data-sitekey={SITE_RECAPTCHA_KEY}></div>
 
                 <Button type="btn" text="Send" />
             </form>
