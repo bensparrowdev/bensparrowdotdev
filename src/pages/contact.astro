@@ -10,7 +10,7 @@ import Button from '../components/Button'
             <p>Have an amazing new project you need help with? Get in touch using the form below or send me an email instead at <Button type="code-block" text="bensparrowdev@gmail.com" link="mailto:bensparrowdev@gmail.com" /></p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid md:grid-cols-2 md:pb-20 gap-4">
 
             <form action="/contact" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true"
             class="contact-form">
@@ -57,10 +57,6 @@ import Button from '../components/Button'
 </Layout>
 
 <style>
-    .contact-form {
-        
-    }
-
     .contact-form input,
     .contact-form textarea{
         @apply w-full my-2 p-4 rounded border-2 focus:outline-none backdrop-blur-sm bg-transparent focus:bg-secondary border-accent text-primary placeholder:text-body;
