@@ -10,7 +10,7 @@ import ThemeSwitch from '../layout/ThemeSwitch'
     <div>
       <nav class="flex items-center gap-x-12">
         <a class="hidden md:block cursor-pointer" href="https://drive.google.com/file/d/1nTBhdXiDH3TqsEdZnMotrqeBe0CK452U/view?usp=sharing" target="_blank" rel="noreferrer">view cv</a>
-        <a class="header_trigger dark:hover:border-secondary z-20">
+        <a class="header_trigger dark:hover:border-secondary z-30">
           <span class="menu">menu</span>
           <span class="close">close</span>
         </a>
@@ -20,7 +20,7 @@ import ThemeSwitch from '../layout/ThemeSwitch'
       </nav>
     </div>
   </div>
-  <div class="wrapper flex flex-col lg:flex-row absolute top-0 left-0 w-full overflow-hidden h-0 z-10">
+  <div class="wrapper flex flex-col lg:flex-row fixed top-0 left-0 w-full overflow-hidden h-0 z-20">
     <div class="menu-first-half h-2/3 lg:h-full lg:w-7/12 bg-secondary dark:bg-secondary_dark flex flex-col items-start justify-between lg:items-end md:justify-center container lg:pr-40 pb-6">
       <div class="pt-9 sm:pt-16 md:hidden">
         <ThemeSwitch client:load />

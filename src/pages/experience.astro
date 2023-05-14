@@ -1,60 +1,47 @@
 ---
+import { contentfulClient } from "../lib/contentful";
+import type { Experience } from "../lib/contentful";
 import Accordion from '../components/Accordion';
 import Layout from '../layouts/Layout.astro'
 
-const accordions: any[] = [
-  {
-    title: "Front-End Developer",
-    company: "Statement Agency",
-    image: { src: "/images/IDHL Logo.webp", alt: "IDHL group logo" },
-    location: "Leeds / remote",
-    url: "statementagency.com",
-    link: "https://www.statementagency.com/",
-    description: "Lorem ipsum dolor sit amet consectetur. Elit et blandit in vitae placerat. Felis nulla posuere morbi nisl amet. Neque sapien vestibulum tincidunt pharetra.",
-    techStack: ["shopify", "javascript", "html/css", "liquid", "sass"]
-  },
-  {
-    title: "Software Developer",
-    company: "Logical Resources",
-    image: { src: "/images/logical-resources-logo.png", alt: "logical resources logo" },
-    location: "Leeds",
-    url: "logicalresources.com",
-    link: "https://www.logicalresources.com/",
-    description: "Lorem ipsum dolor sit amet consectetur. Elit et blandit in vitae placerat. Felis nulla posuere morbi nisl amet. Neque sapien",
-    techStack: ["javascript", "html/css", "react", "redux", "node", "express"]
-  }
-]
+const entries = await contentfulClient.getEntries<Experience>({
+  content_type: "experience",
+});
+
+const experiences = entries.items
 ---
 
 <Layout title="Experience | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="self-proclaimed chef">
 	<section class="container-lg mx-auto">
     <h1>Professional Experience.</h1>
     <div class="container-md">
-      {accordions.map((acc, i) => {
+      {experiences.map((item, i) => {
+        const { title, company, location, root, link, description, techStack } = item.fields
+        const { fields } = item.fields.logo
         return (
           i === 0 ? (
             <Accordion 
-              title={acc.title} 
-              company={acc.company} 
-              image={acc.image} 
-              location={acc.location} 
-              url={acc.url} 
-              link={acc.link}
-              description={acc.description} 
-              techStack={acc.techStack}
+              title={title} 
+              company={company} 
+              logo={fields} 
+              location={location} 
+              root={root} 
+              link={link}
+              description={description} 
+              techStack={techStack}
               isOpen
               client:load
             />
           ) : (
             <Accordion 
-              title={acc.title} 
-              company={acc.company} 
-              image={acc.image} 
-              location={acc.location} 
-              url={acc.url} 
-              link={acc.link}
-              description={acc.description} 
-              techStack={acc.techStack}
+              title={title} 
+              company={company} 
+              logo={fields} 
+              location={location} 
+              root={root} 
+              link={link}
+              description={description} 
+              techStack={techStack}
               client:load
             />
           )

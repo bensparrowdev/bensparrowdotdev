@@ -5,9 +5,9 @@ export default function Accordion({
   isOpen = false,
   title,
   company,
-  image,
+  logo,
   location,
-  url,
+  root,
   link,
   description,
   techStack,
@@ -60,12 +60,17 @@ export default function Accordion({
             <span className="text-body dark:text-body_dark mr-1">
               <i className="fa-solid fa-link"></i>
             </span>
-            <a href={link}>{url}</a>
+            <a href={link}>{root}</a>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <p>{description}</p>
-          <img src={image.src} alt={image.alt} className="h-fit" width="125" />
+          <img
+            src={logo.file.url}
+            alt={logo.description}
+            className="h-fit"
+            width="125"
+          />
         </div>
         <div className="flex flex-wrap gap-3 ">
           {techStack.map((t, i) => {

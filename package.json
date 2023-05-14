@@ -12,9 +12,11 @@
 	"dependencies": {
 		"@astrojs/react": "^2.1.0",
 		"@astrojs/tailwind": "^3.0.1",
+		"@contentful/rich-text-html-renderer": "^16.0.4",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
 		"astro": "^2.1.8",
+		"contentful": "^10.2.0",
 		"framer-motion": "^10.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
