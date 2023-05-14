@@ -21,7 +21,8 @@ export default function Button({
         dark:text-accent_dark 
         dark:bg-primary_dark 
         dark:hover:text-body_dark 
-        dark:hover:bg-accent_dark"
+        dark:hover:bg-accent_dark
+        disabled:cursor-not-allowed"
         >
           {text}
         </button>

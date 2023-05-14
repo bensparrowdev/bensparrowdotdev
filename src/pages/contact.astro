@@ -16,7 +16,15 @@ const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
 
             <script type="text/javascript">
                 var onloadCallback = function() {
-                    console.log(grecaptcha.getResponse())
+                    document.querySelector('.contact-form button').disabled = true;
+                    grecaptcha.render('recaptcha_ref', {
+                        'sitekey' : '6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
+                        'callback' : function(response) {
+                            if (response) {
+                                document.querySelector('.contact-form button').disabled = false;
+                            }
+                        },
+                    });
                 };
             </script>
 
@@ -41,14 +49,13 @@ const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
                 <textarea name="message" id="message" rows="7" cols="40" placeholder="Message" required
                 class="dark:focus:bg-secondary_dark dark:border-accent_dark dark:text-primary_dark dark:placeholder:text-body_dark"></textarea>
 
-                <div class="g-recaptcha" data-sitekey={SITE_RECAPTCHA_KEY}></div>
+                <div id="recaptcha_ref"></div>
 
                 <Button type="btn" text="Send" />
             </form>
 
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-            async defer>
-            </script>
+            async defer />
 
             <div class="flex items-end justify-center pb-20">
                 <div class="flex gap-4 text-body dark:text-body_dark mt-8">
