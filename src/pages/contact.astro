@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button'
-
-const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
 ---
 
 <Layout title="Contact | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="get in touch">
@@ -15,10 +13,11 @@ const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
         <div class="grid md:grid-cols-2 md:pb-20 gap-4">
 
             <script type="text/javascript">
+                const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
                 var onloadCallback = function() {
                     document.querySelector('.contact-form button').disabled = true;
                     grecaptcha.render('recaptcha_ref', {
-                        'sitekey' : '6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
+                        'sitekey' : SITE_RECAPTCHA_KEY, //'6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
                         'callback' : function(response) {
                             if (response) {
                                 document.querySelector('.contact-form button').disabled = false;
