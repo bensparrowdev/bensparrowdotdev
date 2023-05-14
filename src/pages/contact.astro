@@ -13,11 +13,10 @@ import Button from '../components/Button'
         <div class="grid md:grid-cols-2 md:pb-20 gap-4">
 
             <script type="text/javascript">
-                const SITE_RECAPTCHA_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
                 var onloadCallback = function() {
                     document.querySelector('.contact-form button').disabled = true;
                     grecaptcha.render('recaptcha_ref', {
-                        'sitekey' : SITE_RECAPTCHA_KEY, //'6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
+                        'sitekey' : '6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
                         'callback' : function(response) {
                             if (response) {
                                 document.querySelector('.contact-form button').disabled = false;
