@@ -1,6 +1,6 @@
-export default function SideDrawer({ drawerOpen, setDrawerOpen }) {
+export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   return (
-    <div className="relative z-20">
+    <div className="relative z-30">
       <div
         className={`fixed right-0 top-0 h-full w-full bg-black/50 backdrop-blur-sm ${
           !drawerOpen && "invisible"
@@ -21,7 +21,9 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen }) {
             >
               back
             </div>
-            <div>website, app</div>
+            {project.tags.map((t) => {
+              return <div>{t}</div>;
+            })}
           </div>
         </div>
 
@@ -31,71 +33,44 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen }) {
             alt="random alt"
             className="mb-4 rounded-md"
           />
-          <h3 className="capitalize">title</h3>
-          <p>this is a quick subhead to the title.</p>
+          <h3 className="capitalize">{project.title}</h3>
+          <p>{project.subheading}</p>
           <h6 className="capitalize">about</h6>
-          <p>
-            pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris
-            dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation
-            non quis. pOccaecat adipisicing deserunt eu incididunt mollit id ad
-            laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim
-            exercitation non quis.pOccaecat adipisicing deserunt eu incididunt
-            mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim
-            amet minim exercitation non quis. pOccaecat adipisicing deserunt eu
-            incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure
-            ea minim amet minim exercitation non quis.
-          </p>
+          <p>{project.description}</p>
           <h6 className="capitalize">Tech Stack</h6>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            <span
-              className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
-                text-base
-                lowercase
-                font-ubuntu_mono
-                select-none
-                text-body
-                bg-accent
-                hover:text-primary
-                hover:bg-accent2
-                dark:text-body_dark
-                dark:bg-accent_dark
-                dark:hover:text-primary_dark
-                dark:hover:bg-accent2_dark"
-            >
-              JavaScript
-            </span>
-            <span
-              className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
-                text-base
-                lowercase
-                font-ubuntu_mono
-                select-none
-                text-body
-                bg-accent
-                hover:text-primary
-                hover:bg-accent2
-                dark:text-body_dark
-                dark:bg-accent_dark
-                dark:hover:text-primary_dark
-                dark:hover:bg-accent2_dark"
-            >
-              JavaScript
-            </span>
+            {project.techStack.map((tech) => {
+              return (
+                <span
+                  className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
+                    text-base
+                    lowercase
+                    font-ubuntu_mono
+                    select-none
+                    text-body
+                    bg-accent
+                    hover:text-primary
+                    hover:bg-accent2
+                    dark:text-body_dark
+                    dark:bg-accent_dark
+                    dark:hover:text-primary_dark
+                    dark:hover:bg-accent2_dark"
+                >
+                  {tech}
+                </span>
+              );
+            })}
           </div>
 
           <h6 className="capitalize">
             Code <i className="fa-brands fa-github"></i>
           </h6>
-          <a href="" target="_blank">
-            github link here
+          <a href={project.repo} target="_blank">
+            {project.repo ? `/${project.repo.split("/").at(-1)}` : ""}
           </a>
         </div>
-        <a
-          href="https://www.w3schools.com/tags/att_a_rel.asp"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={project.link} target="_blank" rel="noreferrer">
           <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md dark:bg-accent_dark">
             Open Project
           </div>
@@ -104,3 +79,14 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen }) {
     </div>
   );
 }
+
+const dummyData = {
+  title: "title",
+  tags: ["website", "app"],
+  subheading: "this is a quick subhead to the title",
+  description:
+    "pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis. pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis.pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis. pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis.",
+  techStack: ["javascript", "html/css"],
+  repo: "github.com/bensparrowdev",
+  link: "google.com",
+};

@@ -8,7 +8,7 @@ const entries = await contentfulClient.getEntries<Experience>({
   content_type: "experience",
 });
 
-const experiences = entries.items
+const {experiences = entries.items} = Astro.props
 ---
 
 <Layout title="Experience | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="self-proclaimed chef">

@@ -1,6 +1,14 @@
 ---
+import { contentfulClient } from "../lib/contentful";
+import type { Project } from "../lib/contentful";
 import Layout from '../layouts/Layout.astro'
-import Projects from '../components/projects/Projects'
+import ProjectsSection from '../components/projects/ProjectsSection'
+
+const entries = await contentfulClient.getEntries<Project>({
+  content_type: "projects",
+});
+
+const {projects = entries.items} = Astro.props
 ---
 
 <Layout title="Projects | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="bookworm">
@@ -8,7 +16,7 @@ import Projects from '../components/projects/Projects'
     <h1>Projects.</h1>
     <div class="container-lg">
 
-      <Projects client:visible />
+      <ProjectsSection client:visible projects={projects} />
 
     </div>
   </section>

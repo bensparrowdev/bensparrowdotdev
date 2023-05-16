@@ -3,18 +3,24 @@ import Tabs from "./Tabs";
 import Card from "./Card";
 import SideDrawer from "./SideDrawer";
 
-export default function Projects() {
+export default function ProjectsSection({ projects }) {
   const [currentTab, setCurrentTab] = useState<string>("all");
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [projectData, setProjectData] = useState({
+    techStack: ["null"],
+    tags: ["null"],
+  });
 
   const renderCards = (data) => {
     let filteredData = [];
 
     if (currentTab === "all") filteredData = data;
     if (currentTab === "website")
-      filteredData = data.filter((proj) => proj.tags.includes("website"));
+      filteredData = data.filter((proj) =>
+        proj.fields.tags.includes("website")
+      );
     if (currentTab === "app")
-      filteredData = data.filter((proj) => proj.tags.includes("app"));
+      filteredData = data.filter((proj) => proj.fields.tags.includes("app"));
 
     return filteredData;
   };
@@ -23,26 +29,23 @@ export default function Projects() {
     <>
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <div className="columns-1 sm:columns-2 gap-6">
-        {renderCards(projectData).map((p, i) => {
+        {renderCards(projects).map((proj, i) => {
           return (
             <Card
               key={i}
-              image={p.image}
-              title={p.title}
-              description={p.description}
+              project={proj.fields}
               drawerOpen={drawerOpen}
               setDrawerOpen={setDrawerOpen}
+              setProjectData={setProjectData}
             />
           );
         })}
       </div>
-      {/* <div
-        className={`transition-transform duration-200 ${
-          drawerOpen ? "translate-x-0" : "translate-x-4"
-        }`}
-      > */}
-      <SideDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-      {/* </div> */}
+      <SideDrawer
+        drawerOpen={drawerOpen}
+        setDrawerOpen={setDrawerOpen}
+        project={projectData}
+      />
     </>
   );
 }
