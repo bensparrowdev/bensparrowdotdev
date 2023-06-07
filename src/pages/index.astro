@@ -5,7 +5,11 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Home | bensparrowdev" description="Hi, I'm Ben Sparrow, a software developer, and welcome to my portfolio website." bgText="web developer">
 	<div class="container-lg mx-auto">
-		<h1 class="mb-2rem">Hello, I'm Ben.</h1>
+		<div class="stack flex">
+			<h1 style="--index: 0;">Hello, I'm Ben.</h1>
+			<h1 style="--index: 1;">Hello, I'm Ben.</h1>
+			<h1 style="--index: 2;">Hello, I'm Ben.</h1>
+		</div>
 		<p>I'm a software engineer from the UK, passionate about building web applications. When I'm not typing away on a keyboard, I'm probably wielding a frying pan or lifting some dumbbells.</p>
 		<p>Feel free to check out <Button client:idle text="my projects" link="/projects" type="code-block" />,  <Button client:idle text="my experience" link="/experience" type="code-block" />, more <Button client:idle text="about me" link="/about" type="code-block" />, why not <Button client:idle text="get in touch" link="/contact" type="code-block" />, or email me at <Button client:idle text="bensparrowdev@gmail.com" link="mailto:bensparrowdev@gmail.com" type="code-block" />.</p>
 		<p>Have a great day!</p>
@@ -23,4 +27,3 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</div>
 </Layout>
- 

@@ -4,6 +4,7 @@ import type { Project } from "../lib/contentful";
 import Layout from '../layouts/Layout.astro'
 import ProjectsSection from '../components/projects/ProjectsSection'
 
+// project data
 const entries = await contentfulClient.getEntries<Project>({
   content_type: "projects",
 });

@@ -1,4 +1,6 @@
 export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
+  const image = project.image?.fields || "";
+
   return (
     <div className="relative z-30">
       <div
@@ -21,28 +23,29 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
             >
               back
             </div>
-            {project.tags.map((t) => {
-              return <div>{t}</div>;
+            {project.tags.map((t, i) => {
+              return <div key={i}>{t}</div>;
             })}
           </div>
         </div>
 
         <div className="h-full w-full overflow-auto pt-20 pb-8">
           <img
-            src="https://cdn.dribbble.com/userupload/6173673/file/original-4ab4d8a9aaa3ef3460a299b5a8c889c4.png?compress=1&resize=1024x768&vertical=center"
-            alt="random alt"
+            src={image.file?.url}
+            alt={image.description}
             className="mb-4 rounded-md"
           />
-          <h3 className="capitalize">{project.title}</h3>
+          <h3>{project.title}</h3>
           <p>{project.subheading}</p>
-          <h6 className="capitalize">about</h6>
+          <h6 className="capitalize mb-2">about</h6>
           <p>{project.description}</p>
-          <h6 className="capitalize">Tech Stack</h6>
+          <h6 className="capitalize mb-2">Tech Stack</h6>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.techStack.map((tech) => {
+            {project.techStack.map((tech, i) => {
               return (
                 <span
+                  key={i}
                   className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
                     text-base
                     lowercase
@@ -63,7 +66,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
             })}
           </div>
 
-          <h6 className="capitalize">
+          <h6 className="capitalize mb-2">
             Code <i className="fa-brands fa-github"></i>
           </h6>
           <a href={project.repo} target="_blank">
@@ -71,7 +74,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
           </a>
         </div>
         <a href={project.link} target="_blank" rel="noreferrer">
-          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md dark:bg-accent_dark">
+          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md bg-accent dark:bg-accent_dark">
             Open Project
           </div>
         </a>
@@ -80,13 +83,3 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   );
 }
 
-const dummyData = {
-  title: "title",
-  tags: ["website", "app"],
-  subheading: "this is a quick subhead to the title",
-  description:
-    "pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis. pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis.pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis. pOccaecat adipisicing deserunt eu incididunt mollit id ad laboris dolore Lorem in cillum fugiat.Irure ea minim amet minim exercitation non quis.",
-  techStack: ["javascript", "html/css"],
-  repo: "github.com/bensparrowdev",
-  link: "google.com",
-};

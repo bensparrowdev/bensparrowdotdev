@@ -38,16 +38,6 @@ export interface Project {
   }
 }
 
-// {
-//   image: {
-//     src: "https://cdn.dribbble.com/userupload/6171241/file/original-f7ba7a7c95ddcb83812d5472361bb180.png?compress=1&resize=1024x768",
-//     alt: "",
-//   },
-//   title: "proj 4",
-//   description: "Quis voluptate laborum sit velit laborum Lorem mollit.",
-//   tags: ["website"],
-// },
-
 export const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.DEV
