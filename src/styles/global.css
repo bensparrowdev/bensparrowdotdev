@@ -29,6 +29,19 @@ p {
   @apply text-base font-normal leading-8 text-body dark:text-body_dark mb-4;
 }
 
+a {
+  @apply relative;
+}
+
+p > a::before {
+  content: "";
+  @apply bg-accent dark:bg-accent_dark w-full h-[2px] bottom-[2px] absolute -z-10;
+}
+
+p > a:hover::before {
+  @apply bg-accent2 dark:bg-accent2_dark
+}
+
 h1 {
   @apply text-4xl sm:text-6xl mb-8;
 }

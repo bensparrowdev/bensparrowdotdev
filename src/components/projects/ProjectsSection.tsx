@@ -47,11 +47,15 @@ export default function ProjectsSection({ projects }) {
           );
         })}
       </motion.div>
-      <SideDrawer
-        drawerOpen={drawerOpen}
-        setDrawerOpen={setDrawerOpen}
-        project={projectData}
-      />
+      {drawerOpen ? (
+        <SideDrawer
+          drawerOpen={drawerOpen}
+          setDrawerOpen={setDrawerOpen}
+          project={projectData}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }

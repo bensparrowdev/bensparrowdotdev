@@ -1,5 +1,9 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   const image = project.image?.fields || "";
+
+  const document = project.description;
 
   return (
     <div className="relative z-30">
@@ -23,9 +27,15 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
             >
               back
             </div>
-            {project.tags.map((t, i) => {
-              return <div key={i}>{t}</div>;
-            })}
+            <div>
+              {project.tags.map((t, i) => {
+                if (project.tags.length > 1) {
+                  if (i + 1 === project.tags.length)
+                    return <span key={i}>{t}</span>;
+                  else return <span key={i}>{t}, </span>;
+                } else return <span key={i}>{t}</span>;
+              })}
+            </div>
           </div>
         </div>
 
@@ -35,10 +45,12 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
             alt={image.description}
             className="mb-4 rounded-md"
           />
-          <h3>{project.title}</h3>
-          <p>{project.subheading}</p>
+          <h3 className="mb-0">{project.title}</h3>
+          <p className="mb-6">{project.subheading}</p>
           <h6 className="capitalize mb-2">about</h6>
-          <p>{project.description}</p>
+
+          {documentToReactComponents(document)}
+
           <h6 className="capitalize mb-2">Tech Stack</h6>
 
           <div className="flex flex-wrap gap-2 mb-4">
@@ -73,8 +85,8 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
             {project.repo ? `/${project.repo.split("/").at(-1)}` : ""}
           </a>
         </div>
-        <a href={project.link} target="_blank" rel="noreferrer">
-          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md bg-accent dark:bg-accent_dark">
+        <a href={project.link} target="_blank">
+          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md bg-accent dark:bg-accent_dark drop-shadow-xl">
             Open Project
           </div>
         </a>
@@ -82,4 +94,3 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
     </div>
   );
 }
-
