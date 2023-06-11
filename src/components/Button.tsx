@@ -33,7 +33,7 @@ export default function Button({
       <a href={link}>
         <button
           className="py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
-          text-base
+          text-lg
           lowercase
           font-ubuntu_mono
           text-body

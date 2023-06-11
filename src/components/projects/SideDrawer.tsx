@@ -43,7 +43,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
           <img
             src={image.file?.url}
             alt={image.description}
-            className="mb-4 rounded-md"
+            className="mb-6 rounded-md"
           />
           <h3 className="mb-0">{project.title}</h3>
           <p className="mb-6">{project.subheading}</p>
@@ -53,13 +53,13 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
 
           <h6 className="capitalize mb-2">Tech Stack</h6>
 
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-6">
             {project.techStack.map((tech, i) => {
               return (
                 <span
                   key={i}
                   className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
-                    text-base
+                    text-lg
                     lowercase
                     font-ubuntu_mono
                     select-none

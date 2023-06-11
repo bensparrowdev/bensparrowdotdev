@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  @apply font-poppins text-primary bg-secondary dark:text-primary_dark dark:bg-secondary_dark duration-200 md:px-8;
+  @apply font-poppins text-lg text-primary bg-secondary dark:text-primary_dark dark:bg-secondary_dark duration-200 md:px-8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
@@ -26,7 +26,7 @@ body {
 }
 
 p {
-  @apply text-base font-normal leading-8 text-body dark:text-body_dark mb-4;
+  @apply text-lg font-normal leading-8 text-body dark:text-body_dark mb-4;
 }
 
 a {
