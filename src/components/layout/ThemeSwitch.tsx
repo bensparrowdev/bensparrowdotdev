@@ -22,11 +22,8 @@ export default function ThemeSwitch() {
 
   useEffect(() => {
     const root = document.documentElement
-    if (currentTheme === 'light') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
+    if (currentTheme === "light") root.classList.add("dark");
+    else root.classList.remove("dark");
   }, [currentTheme])
   
   return (

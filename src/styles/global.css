@@ -39,7 +39,7 @@ p > a::before {
 }
 
 p > a:hover::before {
-  @apply bg-accent2 dark:bg-accent2_dark
+  @apply bg-accent2 dark:bg-accent2_dark;
 }
 
 h1 {

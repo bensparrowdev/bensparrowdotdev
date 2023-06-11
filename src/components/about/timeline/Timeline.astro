@@ -78,7 +78,6 @@
   const setWidth = () => {
     const contentWidth = document.querySelector('.timeline-section').offsetWidth;
     const dateBlocks = document.querySelectorAll('.timeline-section div');
-    console.log(contentWidth / 2)
     dateBlocks.forEach(block => {
       block.style.width = (contentWidth / 2) + "px";
     });

@@ -19,32 +19,19 @@ const {experiences = entries.items} = Astro.props
         const { title, company, location, root, link, description, techStack } = item.fields
         const { fields } = item.fields.logo
         return (
-          i === 0 ? (
-            <Accordion 
-              title={title} 
-              company={company} 
-              logo={fields} 
-              location={location} 
-              root={root} 
-              link={link}
-              description={description} 
-              techStack={techStack}
-              isOpen
-              client:load
-            />
-          ) : (
-            <Accordion 
-              title={title} 
-              company={company} 
-              logo={fields} 
-              location={location} 
-              root={root} 
-              link={link}
-              description={description} 
-              techStack={techStack}
-              client:load
-            />
-          )
+          <Accordion 
+            title={title} 
+            company={company} 
+            logo={fields} 
+            location={location} 
+            root={root} 
+            link={link}
+            description={description} 
+            techStack={techStack}
+            isOpen
+            client:load
+            isOpen={i === 0 ? true : false}
+          />
         )
       })}
     </div>

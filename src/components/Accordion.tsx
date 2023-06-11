@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 
 export default function Accordion({
-  isOpen = false,
+  isOpen,
   title,
   company,
   logo,
@@ -60,7 +60,9 @@ export default function Accordion({
             <span className="text-body dark:text-body_dark mr-1">
               <i className="fa-solid fa-link"></i>
             </span>
-            <a href={link}>{root}</a>
+            <a href={link} target="_blank" rel="external">
+              {root}
+            </a>
           </div>
         </div>
         <div className="flex items-center gap-2">
