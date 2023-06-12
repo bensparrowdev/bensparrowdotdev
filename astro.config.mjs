@@ -10,7 +10,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [image(), react(), tailwind(), sitemap()],
+  site: "https://bensparrow.dev",
   server: {
-    host: true
-  }
+    host: true,
+  },
 });

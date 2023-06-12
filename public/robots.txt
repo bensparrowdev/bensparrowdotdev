@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bensparrow.dev/sitemap-index.xml
