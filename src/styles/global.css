@@ -33,13 +33,12 @@ a {
   @apply relative;
 }
 
-p > a::before {
-  content: "";
-  @apply bg-accent dark:bg-accent_dark w-full h-[2px] bottom-[2px] absolute -z-10;
+p > a {
+  @apply underline decoration-accent2 dark:decoration-accent2_dark transition-all duration-200 ease-in-out;
 }
 
-p > a:hover::before {
-  @apply bg-accent2 dark:bg-accent2_dark;
+p > a:hover {
+  @apply decoration-primary dark:decoration-primary_dark;
 }
 
 h1 {
