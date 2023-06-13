@@ -60,7 +60,12 @@ export default function Accordion({
             <span className="text-body dark:text-body_dark mr-1">
               <i className="fa-solid fa-link"></i>
             </span>
-            <a href={link} target="_blank" rel="external">
+            <a
+              href={link}
+              target="_blank"
+              rel="external"
+              className="accordion-root"
+            >
               {root}
             </a>
           </div>

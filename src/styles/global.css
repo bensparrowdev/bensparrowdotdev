@@ -33,12 +33,8 @@ a {
   @apply relative;
 }
 
-p > a {
-  @apply underline decoration-accent2 dark:decoration-accent2_dark transition-all duration-200 ease-in-out;
-}
-
-p > a:hover {
-  @apply decoration-primary dark:decoration-primary_dark;
+p > a, .accordion-root, .menu-second-half a {
+  @apply underline decoration-accent2 dark:decoration-accent2_dark hover:decoration-primary dark:hover:decoration-primary_dark transition-all duration-200 ease-in-out;
 }
 
 h1 {
@@ -68,7 +64,7 @@ button {
   @apply selection:bg-opacity-0 focus-visible:outline-body dark:focus-visible:outline-secondary_dark;
 }
 
-header a, header span {
+nav a, nav span {
   @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-150 ease-in text-2xl font-light;
 }
 
