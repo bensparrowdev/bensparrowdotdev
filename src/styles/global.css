@@ -34,7 +34,7 @@ a {
 }
 
 p > a, .accordion-root, .menu-second-half a {
-  @apply underline decoration-accent2 dark:decoration-accent2_dark hover:decoration-primary dark:hover:decoration-primary_dark transition-all duration-200 ease-in-out;
+  @apply underline decoration-accent2 dark:decoration-accent2_dark hover:decoration-primary dark:hover:decoration-primary_dark transition-[text-decoration-color] duration-200 ease-in-out;
 }
 
 h1 {
