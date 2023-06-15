@@ -9,7 +9,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
     <div className="relative z-30">
       <div
         className={`fixed right-0 top-0 h-full w-full bg-black/50 backdrop-blur-sm ${
-          !drawerOpen && "invisible"
+          !drawerOpen && "hidden"
         }`}
         onClick={() => setDrawerOpen(!drawerOpen)}
       ></div>
