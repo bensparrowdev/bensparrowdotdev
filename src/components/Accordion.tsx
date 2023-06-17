@@ -49,7 +49,7 @@ export default function Accordion({
           marginBottom: `${expand ? "1rem" : "0"}`,
         }}
       >
-        <div className="flex mb-4 gap-4">
+        <div className="flex flex-col sm:flex-row mb-2 gap-4">
           <div className="flex items-center">
             <span className="text-body dark:text-body_dark mr-1">
               <i className="fa-solid fa-location-dot"></i>
@@ -70,12 +70,12 @@ export default function Accordion({
             </a>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <p>{description}</p>
+        <div className="flex flex-col md:flex-row items-center md:gap-2">
+          <p className="mb-0 md:mb-4">{description}</p>
           <img
             src={logo.file.url}
             alt={logo.description}
-            className="h-fit"
+            className="h-fit my-4 md:my-0"
             width="125"
           />
         </div>
