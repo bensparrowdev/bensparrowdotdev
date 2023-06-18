@@ -73,6 +73,25 @@ import Button from '../components/Button'
 	</section>
 </Layout>
 
+<script>
+    const handleSubmit = (event: Event) => {
+        event.preventDefault();
+
+        const myForm = event.target as HTMLFormElement;
+        const formData = new FormData(myForm);
+        
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData as any).toString(),
+        })
+            .then(() => console.log("Form successfully submitted"))
+            .catch((error) => alert(error));
+    };
+
+    document.querySelector("form").addEventListener("submit", handleSubmit)
+</script>
+
 <style>
     .contact-form input,
     .contact-form textarea{
