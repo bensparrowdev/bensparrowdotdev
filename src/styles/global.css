@@ -65,7 +65,7 @@ button {
 }
 
 nav a, nav span {
-  @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-150 ease-in text-2xl font-light;
+  @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-200 ease-in text-2xl font-light;
 }
 
 /* CUSTOM CLASSES */
