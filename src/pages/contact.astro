@@ -50,12 +50,24 @@ import Button from '../components/Button'
                 <div id="recaptcha_ref"></div>
 
                 <Button type="btn" text="Send" />
+
+                <div class="bg-red-100 dark:bg-red-200 border-2 border-red-400 text-red-700 bg-opacity-80 backdrop-blur-sm my-2 p-4 rounded relative hidden" id="fail" role="alert">
+                    <span class="font-bold">Oh snap!</span>
+                    <span class="block sm:inline">This form is broken. Please try again or consider reaching me by email.</span>
+                </div>
+
+                <div class="bg-green-100 dark:bg-green-50 border-2 border-green-400 text-green-700 bg-opacity-80 backdrop-blur-sm my-2 p-4 rounded relative hidden" id="success" role="alert">
+                    <span class="font-bold">Thanks!</span>
+                    <span class="block sm:inline">I've received your message and I'll be in touch very soon!</span>
+                </div>
+
             </form>
+
 
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
             async defer />
 
-            <div class="flex items-end justify-start lg:justify-center pb-20">
+            <div class="flex items-end justify-start lg:justify-center max-h-[570px]">
                 <div class="flex gap-4 text-body dark:text-body_dark mt-8">
                     <p class="mb-0">You can also find me on:</p>
                     <a href="https://twitter.com/bensparrowdev" target="_blank" rel="external">
@@ -85,8 +97,13 @@ import Button from '../components/Button'
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData as any).toString(),
         })
-            .then(() => console.log("Form successfully submitted"))
-            .catch((error) => alert(error));
+        .then(() => {
+            document.getElementById('success').classList.remove('hidden')
+        } )
+        .catch((error) => {
+            console.log(error)
+            document.getElementById('fail').classList.remove('hidden')
+        });
     };
 
     document.querySelector("form").addEventListener("submit", handleSubmit)
