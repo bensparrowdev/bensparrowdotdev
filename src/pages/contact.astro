@@ -98,11 +98,12 @@ import Button from '../components/Button'
             body: new URLSearchParams(formData as any).toString(),
         })
         .then(() => {
-            document.getElementById('success').classList.remove('hidden')
+            myForm.reset();
+            document.getElementById('success').classList.remove('hidden');
         } )
         .catch((error) => {
-            console.log(error)
-            document.getElementById('fail').classList.remove('hidden')
+            console.log(error);
+            document.getElementById('fail').classList.remove('hidden');
         });
     };
 
