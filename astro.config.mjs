@@ -13,7 +13,6 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     partytown({
-      // Adds dataLayer.push as a forwarding-event.
       config: {
         forward: ["dataLayer.push"],
       },

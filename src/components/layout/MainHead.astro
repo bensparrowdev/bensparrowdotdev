@@ -11,6 +11,16 @@ const { title = "bensparrowdev Portfolio", description = "Hi, I'm Ben Sparrow an
 
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Google tag (gtag.js) -->
+  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-L07TB315QM"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L07TB315QM');
+  </script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="sitemap" href="/sitemap-index.xml">
@@ -18,13 +28,4 @@ const { title = "bensparrowdev Portfolio", description = "Hi, I'm Ben Sparrow an
   <title>{title}</title>
   <meta name="description" content={description}>
   <script src="https://kit.fontawesome.com/f5339c6b8f.js" crossorigin="anonymous"></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L07TB315QM"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-L07TB315QM');
-  </script>
 </head>
