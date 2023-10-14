@@ -1,5 +1,5 @@
 /* import fonts & tailwind */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,12 +9,13 @@
   @apply p-0 m-0 box-border;
 }
 
-html, body {
+html,
+body {
   @apply h-full w-full;
 }
 
 body {
-  @apply font-poppins text-lg text-primary bg-secondary dark:text-primary_dark dark:bg-secondary_dark duration-200 md:px-8;
+  @apply font-poppins text-lg text-primary bg-secondary dark:text-primary_dark dark:bg-secondary_dark md:px-8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
@@ -33,7 +34,9 @@ a {
   @apply relative;
 }
 
-p > a, .accordion-root, .menu-second-half a {
+p > a,
+.accordion-root,
+.menu-second-half a {
   @apply underline decoration-accent2 dark:decoration-accent2_dark hover:decoration-primary dark:hover:decoration-primary_dark transition-[text-decoration-color] duration-200 ease-in-out;
 }
 
@@ -56,7 +59,12 @@ h6 {
   @apply text-xl;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-semibold leading-normal;
 }
 
@@ -64,7 +72,8 @@ button {
   @apply selection:bg-opacity-0 focus-visible:outline-body dark:focus-visible:outline-secondary_dark;
 }
 
-nav a, nav span {
+nav a,
+nav span {
   @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-200 ease-in text-2xl font-light;
 }
 
@@ -79,31 +88,31 @@ nav a, nav span {
 
 /* dark-mode switch */
 .toggle-switch {
-	margin:0;
-	padding:0;
-	width:48px;
-	height:28px;
-	border:none;
-	outline:none;
-	overflow:hidden;
-	position:relative;
-	border-radius:14px;
-	display:inline-block;
-	background: #021013;
-	@apply dark:w-12 dark:bg-primary_dark;
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 28px;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  border-radius: 14px;
+  display: inline-block;
+  background: #021013;
+  @apply dark:w-12 dark:bg-primary_dark;
 }
 .toggle-switch,
 .toggle-switch:before,
 .toggle-switch:after {
-	@apply transition-all duration-200 ease-in-out;
+  @apply transition-all duration-200 ease-in-out;
 }
 .toggle-switch:before {
-	@apply top-1 left-6 content-[""] w-5 h-5 block absolute rounded-xl bg-secondary;
-	@apply dark:left-1 dark:bg-secondary_dark;
+  @apply top-1 left-6 content-[""] w-5 h-5 block absolute rounded-xl bg-secondary;
+  @apply dark:left-1 dark:bg-secondary_dark;
 }
 .toggle-switch:after {
-	@apply content-[""] top-[14px] right-[2px] w-[1px] h-[1px] block absolute rounded-[0.5px] bg-secondary_dark;
-	@apply dark:top-[-2px] dark:right-[2px] dark:w-8 dark:h-8 dark:rounded-2xl dark:bg-primary_dark;
+  @apply content-[""] top-[14px] right-[2px] w-[1px] h-[1px] block absolute rounded-[0.5px] bg-secondary_dark;
+  @apply dark:top-[-2px] dark:right-[2px] dark:w-8 dark:h-8 dark:rounded-2xl dark:bg-primary_dark;
 }
 .toggle-switch:focus,
 .toggle-switch:focus:after,
@@ -111,7 +120,7 @@ nav a, nav span {
 .toggle-switch:active:after,
 .toggle-switch:hover,
 .toggle-switch:hover:after {
-	@apply bg-body;
+  @apply bg-body;
 }
 
 .toggle-switch:focus,
@@ -120,32 +129,32 @@ nav a, nav span {
 .toggle-switch:hover:after,
 .toggle-switch:active,
 .toggle-switch:active:after {
-	@apply dark:bg-body_dark;
+  @apply dark:bg-body_dark;
 }
 .noselect {
-	@apply select-none;
-	-ms-user-select:none;
-	-moz-user-select:none;
-	-webkit-user-select:none;
+  @apply select-none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 .disableEasingTemporarily,
 .disableEasingTemporarily:after,
 .disableEasingTemporarily:before {
-  -o-transition-property:none!important;
-  -moz-transition-property:none!important;
-  -ms-transition-property:none!important;
-  -webkit-transition-property:none!important;
-  transition-property:none!important;
-  -o-transform:none!important;
-  -moz-transform:none!important;
-  -ms-transform:none!important;
-  -webkit-transform:none!important;
-  transform:none!important;
-  -webkit-animation:none!important;
-  -moz-animation:none!important;
-  -o-animation:none!important;
-  -ms-animation:none!important;
-  animation:none!important;
+  -o-transition-property: none !important;
+  -moz-transition-property: none !important;
+  -ms-transition-property: none !important;
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+  -o-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
 }
 
 /* Cards */
@@ -155,27 +164,29 @@ nav a, nav span {
 
 /* Title animation */
 .stack {
-	display: grid;
-	grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .stack h1 {
-	grid-row-start: 1;
-	grid-column-start: 1;
-	--stacks: 3;
-	--stack-height: calc(100% / var(--stacks) - 1px);
+  grid-row-start: 1;
+  grid-column-start: 1;
+  --stacks: 3;
+  --stack-height: calc(100% / var(--stacks) - 1px);
   --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
   --clip-top: calc(var(--stack-height) * var(--index));
   --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
-	clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards
+      calc(var(--index) * 120ms),
+    glitch 2s ease infinite 2s alternate-reverse;
 }
 
-.stack h1:nth-child(odd) { 
-	--glitch-translate: 8px;
+.stack h1:nth-child(odd) {
+  --glitch-translate: 8px;
 }
 .stack h1:nth-child(even) {
-	--glitch-translate: -8px; 
+  --glitch-translate: -8px;
 }
 
 @keyframes stack {
@@ -183,7 +194,7 @@ nav a, nav span {
     opacity: 0;
     transform: translateX(-50%);
     text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
-  };
+  }
   60% {
     opacity: 0.5;
     transform: translateX(50%);
@@ -206,7 +217,11 @@ nav a, nav span {
   2% {
     text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
   }
-  4%, 100% {  text-shadow: none; transform: none; }
+  4%,
+  100% {
+    text-shadow: none;
+    transform: none;
+  }
 }
 
 /* Misc */

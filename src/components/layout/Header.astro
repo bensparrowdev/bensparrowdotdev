@@ -1,59 +1,120 @@
 ---
-import ThemeSwitch from '../layout/ThemeSwitch'
+import ThemeSwitch from "../layout/ThemeSwitch.astro";
 ---
 
 <header class="py-6 sm:py-12 mb-12 md:mb-20">
   <div class="flex items-center justify-between select-none">
     <div>
-      <a href="/" class="cursor-pointer" aria-label="Go to the homepage"><h4 class="font-eb_Garamond sm:text-5xl">bensparrowdev.</h4></a>
+      <a href="/" class="cursor-pointer" aria-label="Go to the homepage"
+        ><h4 class="font-eb_Garamond sm:text-5xl">bensparrowdev.</h4></a
+      >
     </div>
     <div>
       <nav class="flex items-center gap-x-12">
-        <a class="hidden md:block cursor-pointer" href="https://drive.google.com/file/d/1uAXocnNLMATZjS7vuVx88sJ0TR_RPbHD/view?usp=sharing" target="_blank" rel="external" aria-label="View my CV on another page">view cv</a>
+        <a
+          class="hidden md:block cursor-pointer"
+          href="https://drive.google.com/file/d/1uAXocnNLMATZjS7vuVx88sJ0TR_RPbHD/view?usp=sharing"
+          target="_blank"
+          rel="external"
+          aria-label="View my CV on another page">view cv</a
+        >
         <div class="header_trigger dark:hover:border-secondary z-30">
           <span class="menu">menu</span>
           <span class="close">close</span>
         </div>
         <div class="hidden md:block">
-          <ThemeSwitch client:load />
+          <ThemeSwitch />
         </div>
       </nav>
     </div>
   </div>
-  <div class="wrapper flex flex-col lg:flex-row fixed top-0 left-0 w-full overflow-hidden h-0 z-20">
-    <div class="menu-first-half h-2/3 lg:h-full lg:w-7/12 bg-secondary dark:bg-secondary_dark flex flex-col items-start justify-between lg:items-end md:justify-center overflow-auto px-14 lg:pr-40 pb-6">
+  <div
+    class="wrapper flex flex-col lg:flex-row fixed top-0 left-0 w-full overflow-hidden h-0 z-20"
+  >
+    <div
+      class="menu-first-half h-2/3 lg:h-full lg:w-7/12 bg-secondary dark:bg-secondary_dark flex flex-col items-start justify-between lg:items-end md:justify-center overflow-auto px-14 lg:pr-40 pb-6"
+    >
       <div class="py-9 sm:pt-16 md:hidden">
-        <ThemeSwitch client:load />
+        <ThemeSwitch />
       </div>
       <div>
         <a class="border-none" href="/projects">
-          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Projects</h3>
+          <h3
+            class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
+          >
+            Projects
+          </h3>
         </a>
         <a class="border-none" href="/experience">
-          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">Experience</h3>
+          <h3
+            class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
+          >
+            Experience
+          </h3>
         </a>
         <a class="border-none" href="/about">
-          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6">About</h3>
+          <h3
+            class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
+          >
+            About
+          </h3>
         </a>
         <a class="border-none" href="/contact">
-          <h3 class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl">Contact</h3>
+          <h3
+            class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl"
+          >
+            Contact
+          </h3>
         </a>
       </div>
     </div>
-    <div class="menu-second-half h-1/3 lg:h-full lg:w-5/12 bg-accent dark:bg-accent_dark flex flex-col items-start justify-center overflow-auto lg:pl-20">
+    <div
+      class="menu-second-half h-1/3 lg:h-full lg:w-5/12 bg-accent dark:bg-accent_dark flex flex-col items-start justify-center overflow-auto lg:pl-20"
+    >
       <div class="px-14">
         <h2 class="text-xl mb-1 font-semibold leading-normal">email me at</h2>
-        <a href="mailto:hello@bensparrow.dev" target="_blank" rel="noreferrer" class="text-lg">hello@bensparrow.dev</a>
-        <h2 class="mb-1 mt-3 text-xl font-semibold leading-normal">follow me on</h2>
+        <a
+          href="mailto:hello@bensparrow.dev"
+          target="_blank"
+          rel="noreferrer"
+          class="text-lg">hello@bensparrow.dev</a
+        >
+        <h2 class="mb-1 mt-3 text-xl font-semibold leading-normal">
+          follow me on
+        </h2>
         <div class="flex gap-x-6 mt-3 text-body dark:text-body_dark">
-          <a href="https://twitter.com/bensparrowdev" target="_blank" rel="external" class="border-0 hover:border-0" aria-label="Ben Sparrow twitter profile">
-            <i class="fa-brands fa-twitter fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
+          <a
+            href="https://twitter.com/bensparrowdev"
+            target="_blank"
+            rel="external"
+            class="border-0 hover:border-0"
+            aria-label="Ben Sparrow twitter profile"
+          >
+            <i
+              class="fa-brands fa-twitter fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+            ></i>
           </a>
-          <a href="https://www.linkedin.com/in/ben-sparrow/" target="_blank" rel="external" class="border-0 hover:border-0" aria-label="Ben Sparrow linkedin profile">
-            <i class="fa-brands fa-linkedin-in fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
+          <a
+            href="https://www.linkedin.com/in/ben-sparrow/"
+            target="_blank"
+            rel="external"
+            class="border-0 hover:border-0"
+            aria-label="Ben Sparrow linkedin profile"
+          >
+            <i
+              class="fa-brands fa-linkedin-in fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+            ></i>
           </a>
-          <a href="https://github.com/bensparrowdev" target="_blank" rel="external" class="border-0 hover:border-0" aria-label="Ben Sparrow Github repositories">
-            <i class="fa-brands fa-github fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
+          <a
+            href="https://github.com/bensparrowdev"
+            target="_blank"
+            rel="external"
+            class="border-0 hover:border-0"
+            aria-label="Ben Sparrow Github repositories"
+          >
+            <i
+              class="fa-brands fa-github fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+            ></i>
           </a>
         </div>
       </div>
@@ -62,38 +123,38 @@ import ThemeSwitch from '../layout/ThemeSwitch'
 </header>
 
 <script>
-  const open = document.querySelector('.menu'),
-   close = document.querySelector('.close'),
-   wrapper = document.querySelector('.wrapper'),
-   firstHalf = document.querySelector('.menu-first-half'),
-   secondHalf = document.querySelector('.menu-second-half'),
-   body = document.querySelector('body')
+  const open = document.querySelector(".menu"),
+    close = document.querySelector(".close"),
+    wrapper = document.querySelector(".wrapper"),
+    firstHalf = document.querySelector(".menu-first-half"),
+    secondHalf = document.querySelector(".menu-second-half"),
+    body = document.querySelector("body");
 
-  open.addEventListener('click', () => {
-    body.classList.add('overflow-hidden')
-    wrapper.classList.add('h-full')
-    wrapper.classList.remove('h-0')
+  open.addEventListener("click", () => {
+    body.classList.add("overflow-hidden");
+    wrapper.classList.add("h-full");
+    wrapper.classList.remove("h-0");
 
-    open.classList.add('menu--hide')
-    close.classList.add('close--show')
-    firstHalf.classList.add('menu-first-half--show')
-    secondHalf.classList.add('menu-second-half--show')
-  })
-  
-  close.addEventListener('click', () => {
-    body.classList.remove('overflow-hidden')
-    open.classList.remove('menu--hide')
-    close.classList.remove('close--show')
-    firstHalf.classList.remove('menu-first-half--show')
-    secondHalf.classList.remove('menu-second-half--show')
-  })
+    open.classList.add("menu--hide");
+    close.classList.add("close--show");
+    firstHalf.classList.add("menu-first-half--show");
+    secondHalf.classList.add("menu-second-half--show");
+  });
 
-  firstHalf.addEventListener('transitionend', () => {
-    if (!firstHalf.classList.contains('menu-first-half--show')) {
-      wrapper.classList.remove('h-full')
-      wrapper.classList.add('h-0')
-    } 
-  })
+  close.addEventListener("click", () => {
+    body.classList.remove("overflow-hidden");
+    open.classList.remove("menu--hide");
+    close.classList.remove("close--show");
+    firstHalf.classList.remove("menu-first-half--show");
+    secondHalf.classList.remove("menu-second-half--show");
+  });
+
+  firstHalf.addEventListener("transitionend", () => {
+    if (!firstHalf.classList.contains("menu-first-half--show")) {
+      wrapper.classList.remove("h-full");
+      wrapper.classList.add("h-0");
+    }
+  });
 </script>
 
 <style>
@@ -111,7 +172,7 @@ import ThemeSwitch from '../layout/ThemeSwitch'
 
   .header_trigger span {
     display: inline-block;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   .menu {
@@ -120,7 +181,7 @@ import ThemeSwitch from '../layout/ThemeSwitch'
   .menu--hide {
     transform: translate(0, 100%);
   }
-  
+
   .close {
     position: absolute;
     transform: translate(-100%, -100%);
@@ -132,15 +193,15 @@ import ThemeSwitch from '../layout/ThemeSwitch'
   }
 
   .menu-first-half {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform: translate(100%, 0%);
   }
-  
+
   .menu-second-half {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform: translate(-100%, 0%);
   }
-  
+
   @media (min-width: 1024px) {
     .menu-first-half {
       transform: translate(0%, -100%);
@@ -149,7 +210,7 @@ import ThemeSwitch from '../layout/ThemeSwitch'
       transform: translate(0%, 100%);
     }
   }
-  
+
   .menu-first-half--show {
     transform: translate(0%, 0%);
   }

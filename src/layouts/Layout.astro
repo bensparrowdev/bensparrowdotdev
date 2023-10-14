@@ -1,24 +1,35 @@
 ---
-import MainHead from '../components/layout/MainHead.astro';
-import Header from '../components/layout/Header.astro';
+import MainHead from "../components/layout/MainHead.astro";
+import Header from "../components/layout/Header.astro";
 
-const { title = "bensparrowdev Portfolio", description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.", bgText = "web developer" } = Astro.props;
+const {
+  title = "bensparrowdev Portfolio",
+  description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.",
+  bgText = "web developer",
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
-	<MainHead {title} {description} />
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMSX8SC"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		<main class="container px-4 pb-6">
-			<Header />
-			<slot />
-			<h1 class="font-eb_Garamond text-sky-100 dark:text-bg_text_dark opacity-50 dark:opacity-75 hidden sm:block text-[10vw] fixed break-normal whitespace-nowrap left-2 -bottom-4  m-0 p-0 -z-30">
-				{bgText}
-			</h1>
-		</main >
-	</body>
+<html lang="en">
+  <MainHead {title} {description} />
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KMSX8SC"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <main class="container px-4 pb-6">
+      <Header />
+      <slot />
+      <h1
+        class="font-eb_Garamond text-sky-100 dark:text-bg_text_dark opacity-50 dark:opacity-75 hidden sm:block text-[10vw] fixed break-normal whitespace-nowrap left-2 -bottom-4 m-0 p-0 -z-30"
+      >
+        {bgText}
+      </h1>
+    </main>
+  </body>
 </html>
