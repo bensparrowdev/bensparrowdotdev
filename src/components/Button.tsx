@@ -1,7 +1,7 @@
 interface Button {
-  text: string,
-  link?: string,
-  type: string
+  text: string;
+  link?: string;
+  type: string;
 }
 
 export default function Button({
@@ -13,7 +13,7 @@ export default function Button({
     return (
       <a href={link}>
         <button
-          className="py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-200
+          className="py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-150
         text-accent 
         bg-primary
         hover:text-body
@@ -32,7 +32,7 @@ export default function Button({
     return (
       <a href={link}>
         <button
-          className="py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
+          className="py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 
           text-lg
           lowercase
           font-ubuntu_mono

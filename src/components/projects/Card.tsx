@@ -29,7 +29,7 @@ function Card({ project, drawerOpen, setDrawerOpen, setProjectData }) {
         alt={image.description}
         className="absolute left-0 top-0 object-cover w-full h-full rounded-md -z-10"
       />
-      <div className="text-primary_dark relative z-10 opacity-0 group-hover:-translate-y-4 group-hover:opacity-100 transition-all duration-200 ease-in">
+      <div className="text-primary_dark relative z-10 opacity-0 group-hover:-translate-y-4 group-hover:opacity-100 transition-all duration-150 ease-in">
         <h5 className="mb-2">{title}</h5>
         <span className="text-body_dark">{subheading}</span>
       </div>

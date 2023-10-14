@@ -58,7 +58,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
               return (
                 <span
                   key={i}
-                  className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-200 
+                  className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 
                     text-lg
                     lowercase
                     font-ubuntu_mono
