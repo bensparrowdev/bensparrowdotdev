@@ -1,39 +1,58 @@
 ---
 import { contentfulClient } from "../lib/contentful";
 import type { Experience } from "../lib/contentful";
-import Accordion from '../components/Accordion';
-import Layout from '../layouts/Layout.astro'
+import Accordion from "../components/Accordion";
+import Layout from "../layouts/Layout.astro";
 
 const entries = await contentfulClient.getEntries<Experience>({
   content_type: "experience",
 });
 
-const {experiences = entries.items} = Astro.props
+const { experiences = entries.items } = Astro.props;
 ---
 
-<Layout title="Experience | bensparrowdev" description="Take a look at my professional experience from graduating bootcamp to full-stack web developer" bgText="self-proclaimed chef">
-	<section class="container-lg mx-auto">
+<Layout
+  title="Experience | bensparrowdev"
+  description="Take a look at my professional experience from graduating bootcamp to full-stack web developer"
+  bgText="bookworm"
+>
+  <section class="container-lg mx-auto">
     <h1>Professional Experience.</h1>
     <div class="container-md pb-4">
-      {experiences.map((item, i) => {
-        const { title, company, location, root, link, description, techStack } = item.fields
-        const { fields } = item.fields.logo
-        return (
-          <Accordion 
-            title={title} 
-            company={company} 
-            logo={fields} 
-            location={location} 
-            root={root} 
-            link={link}
-            description={description} 
-            techStack={techStack}
-            isOpen
-            client:load
-            isOpen={i === 0 ? true : false}
-          />
-        )
-      })}
+      {
+        experiences.map((item, i) => {
+          const {
+            title,
+            company,
+            location,
+            root,
+            link,
+            description,
+            techStack,
+          } = item.fields;
+          const { fields } = item.fields.logo;
+          return (
+            <Accordion
+              title={title}
+              company={company}
+              logo={fields}
+              location={location}
+              root={root}
+              link={link}
+              description={description}
+              techStack={techStack}
+              isOpen
+              client:load
+              isOpen={i === 0 ? true : false}
+            />
+          );
+        })
+      }
     </div>
-	</section>
+  </section>
+
+  <section class="container-lg mx-auto pb-12 hidden" id="playlists">
+    <h2 class="text-left">Clients I've worked with</h2>
+    <div></div>
+  </section>
 </Layout>

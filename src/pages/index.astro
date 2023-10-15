@@ -1,29 +1,85 @@
 ---
-import Button from '../components/Button';
-import Layout from '../layouts/Layout.astro';
+import Button from "../components/Button";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Home | bensparrowdev" description="Hi, I'm Ben Sparrow, and I'm a web developer from the UK. Welcome to my corner of the web!" bgText="web developer">
-	<div class="container-lg mx-auto">
-		<div class="stack flex select-none">
-			<h1 style="--index: 0;">Hello, I'm Ben.</h1>
-			<h1 style="--index: 1;">Hello, I'm Ben.</h1>
-			<h1 style="--index: 2;">Hello, I'm Ben.</h1>
-		</div>
-		<p>A web developer from the UK with a passion for building websites and apps. Welcome to my place on the interwebs to showcase my work, ideas, and highlight my expertise in web development. When I'm not typing away on a keyboard, you can find me wielding some dumbbells or listening to electronic music.</p>
-		<p>Feel free to check out <Button client:idle text="my projects" link="/projects" type="code-block" />,  <Button client:idle text="my experience" link="/experience" type="code-block" />, more <Button client:idle text="about me" link="/about" type="code-block" />, why not <Button client:idle text="get in touch" link="/contact" type="code-block" />, or email me at <Button client:idle text="hello@bensparrow.dev" link="mailto:hello@bensparrow.dev" type="code-block" />.</p>
-		<p>Have a great day!</p>
-		<div class="flex gap-4 text-body dark:text-body_dark mt-8">
-			<p class="mb-0">Follow me on:</p>
-			<a href="https://twitter.com/bensparrowdev" target="_blank" rel="external" aria-label="Ben Sparrow twitter profile">
-				<i class="fa-brands fa-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
-			</a>
-			<a href="https://www.linkedin.com/in/ben-sparrow/" target="_blank" rel="external" aria-label="Ben Sparrow linkedin profile">
-				<i class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
-			</a>
-			<a href="https://github.com/bensparrowdev" target="_blank" rel="external" aria-label="Ben Sparrow Github repositories">
-				<i class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"></i>
-			</a>
-		</div>
-	</div>
+<Layout
+  title="Home | bensparrowdev"
+  description="Hi, I'm Ben Sparrow, and I'm a web developer from the UK. Welcome to my corner of the web!"
+  bgText="web developer"
+>
+  <div class="container-lg mx-auto">
+    <div class="stack flex select-none">
+      <h1 style="--index: 0;">Hi, I'm Ben.</h1>
+      <h1 style="--index: 1;">Hi, I'm Ben.</h1>
+      <h1 style="--index: 2;">Hi, I'm Ben.</h1>
+    </div>
+    <p>
+      A professional freelance web developer from the UK who's enthusiastic
+      about building websites and web apps. Welcome to my corner of the internet
+      where I showcase my work, ideas, and highlight my expertise in web
+      development.
+    </p>
+    <p>
+      Feel free to check out my <Button
+        client:idle
+        text="projects"
+        link="/projects"
+        type="code-block"
+      />, explore my <Button
+        client:idle
+        text="experience"
+        link="/experience"
+        type="code-block"
+      />, learn more <Button
+        client:idle
+        text="about me"
+        link="/about"
+        type="code-block"
+      />, <Button
+        client:idle
+        text="get in touch"
+        link="/contact"
+        type="code-block"
+      />, or email me at <Button
+        client:idle
+        text="hello@bensparrow.dev"
+        link="mailto:hello@bensparrow.dev"
+        type="code-block"
+      />.
+    </p>
+    <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+      <p class="mb-0">Follow me on:</p>
+      <a
+        href="https://twitter.com/bensparrowdev"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow twitter profile"
+      >
+        <i
+          class="fa-brands fa-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/ben-sparrow/"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow linkedin profile"
+      >
+        <i
+          class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+      <a
+        href="https://github.com/bensparrowdev"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow Github repositories"
+      >
+        <i
+          class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+    </div>
+  </div>
 </Layout>
