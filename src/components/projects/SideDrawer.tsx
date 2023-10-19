@@ -2,7 +2,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   const image = project.image?.fields || "";
-
   const document = project.description;
 
   return (

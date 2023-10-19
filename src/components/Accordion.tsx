@@ -12,8 +12,8 @@ export default function Accordion({
   description,
   techStack,
 }) {
-  const [expand, setExpand] = useState(false);
-  const [accordionHeight, setAccordionHeight] = useState("0px");
+  const [expand, setExpand] = useState<boolean>(false);
+  const [accordionHeight, setAccordionHeight] = useState<string>("0px");
 
   const content = useRef(null);
 

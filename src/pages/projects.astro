@@ -1,24 +1,26 @@
 ---
 import { contentfulClient } from "../lib/contentful";
 import type { Project } from "../lib/contentful";
-import Layout from '../layouts/Layout.astro'
-import ProjectsSection from '../components/projects/ProjectsSection'
+import Layout from "../layouts/Layout.astro";
+import ProjectsSection from "../components/projects/ProjectsSection";
 
 // project data
 const entries = await contentfulClient.getEntries<Project>({
   content_type: "projects",
 });
 
-const {projects = entries.items} = Astro.props
+const { projects = entries.items } = Astro.props;
 ---
 
-<Layout title="Projects | bensparrowdev" description="Experience the seamless fusion of creativity and technical expertise in my portfolio of stunning web designs, interactive applications, and responsive layouts. Take a glance at the fusion of creativity and technical expertise in HTML/CSS, JavaScript, React, and more. Elevate your online presence with a web developer who crafts digital masterpieces." bgText="tinkerer">
+<Layout
+  title="Projects | bensparrowdev"
+  description="Experience the seamless fusion of creativity and technical expertise in my portfolio of stunning web designs, interactive applications, and responsive layouts. Take a glance at the fusion of creativity and technical expertise in HTML/CSS, JavaScript, React, and more. Elevate your online presence with a web developer who crafts digital masterpieces."
+  bgText="tinkerer"
+>
   <section class="container-lg mx-auto">
     <h1>Projects.</h1>
     <div class="container-lg">
-
       <ProjectsSection client:visible projects={projects} />
-
     </div>
   </section>
 </Layout>
