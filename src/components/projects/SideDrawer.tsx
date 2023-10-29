@@ -55,22 +55,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
           <div className="flex flex-wrap gap-2 mb-6">
             {project.techStack.map((tech, i) => {
               return (
-                <span
-                  key={i}
-                  className="py-1 px-3 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 
-                    text-lg
-                    lowercase
-                    font-ubuntu_mono
-                    select-none
-                    text-body
-                    bg-accent
-                    hover:text-primary
-                    hover:bg-accent2
-                    dark:text-body_dark
-                    dark:bg-accent_dark
-                    dark:hover:text-primary_dark
-                    dark:hover:bg-accent2_dark"
-                >
+                <span key={i} className="code-block-btn">
                   {tech}
                 </span>
               );

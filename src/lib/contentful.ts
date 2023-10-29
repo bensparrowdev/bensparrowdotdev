@@ -26,16 +26,33 @@ export interface Experience {
 export interface Project {
   contentTypeId: string;
   fields: {
-    title: string,
-    description: string,
-    tags: string[],
+    title: string;
+    description: string;
+    tags: string[];
     image: {
       fields: {
-        description: string,
-        url: string
-      }
-    }
-  }
+        description: string;
+        url: string;
+      };
+    };
+  };
+}
+
+export interface BlogPost {
+  contentTypeId: string;
+  fields: {
+    title: string;
+    tags: string[];
+    dateCreated: Date;
+    readTime: number;
+    blogContent: string;
+    featuredImage: {
+      fields: {
+        description: string;
+        url: string;
+      };
+    };
+  };
 }
 
 export const contentfulClient = contentful.createClient({

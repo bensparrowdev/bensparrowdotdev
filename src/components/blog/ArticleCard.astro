@@ -1,0 +1,43 @@
+---
+const { title, tags, featuredImage, readTime } = Astro.props.fields;
+const dateCreated = new Date(Astro.props.dateCreated).toLocaleDateString(
+  "en-gb",
+  { year: "numeric", month: "long", day: "numeric" }
+);
+const imageSrc = featuredImage.fields.file.url;
+const imageAlt = featuredImage.fields.description;
+---
+
+<article
+  class="relative rounded-md w-full overflow-hidden flex justify-center items-center pt-44 lg:pt-72 pb-8 px-8 bg-gradient-to-b"
+>
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    class="absolute w-full h-full -z-10 object-cover inset-0"
+  />
+  <div
+    class="absolute w-full h-full -z-10 opacity-90 inset-0 bg-gradient-to-b from-transparent to-primary"
+  >
+  </div>
+  <div class="text-primary_dark relative w-full">
+    <h5 class="mb-4 lg:mb-2">{title}</h5>
+    <div class="">
+      {
+        tags.map((tag) => (
+          <div class="font-ubuntu_mono text-sm border rounded py-1 px-2 mb-2 inline-block">
+            {tag}
+          </div>
+        ))
+      }
+      <span class="text-sm flex justify-between">
+        <time>{dateCreated}</time>
+        {
+          readTime > 0 && (
+            <span>{`${readTime} ${readTime > 1 ? "mins" : "min"} read`}</span>
+          )
+        }
+      </span>
+    </div>
+  </div>
+</article>

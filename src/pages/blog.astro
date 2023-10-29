@@ -1,0 +1,30 @@
+---
+import { contentfulClient } from "../lib/contentful";
+import type { BlogPost } from "../lib/contentful";
+import Layout from "../layouts/Layout.astro";
+import ArticleCard from "../components/blog/ArticleCard.astro";
+
+// Blog post data
+const entries = await contentfulClient.getEntries<BlogPost>({
+  content_type: "blogPost",
+});
+
+const { posts = entries.items } = Astro.props;
+---
+
+<Layout
+  title="Blog | bensparrowdev"
+  description="Welcome to my blog. Here you'll find articles around web development, how technology can solve business problems, and my journey as a freelance developer."
+  bgText="thinker"
+>
+  <section class="container-lg mx-auto mb-32">
+    <h1>Blog.</h1>
+    <div class="container grid lg:grid-cols-3 auto-rows-fr gap-8">
+      {
+        posts.map((post) => (
+          <ArticleCard fields={post.fields} dateCreated={post.sys.updatedAt} />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
