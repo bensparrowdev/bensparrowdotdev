@@ -25,6 +25,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/image": "^0.16.3",
-		"@astrojs/partytown": "^1.2.3"
+		"@astrojs/partytown": "^1.2.3",
+		"marked": "^9.1.3"
 	}
 }

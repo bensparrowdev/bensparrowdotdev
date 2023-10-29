@@ -46,6 +46,7 @@ export interface BlogPost {
     dateCreated: Date;
     readTime: number;
     blogContent: string;
+    slug: string;
     featuredImage: {
       fields: {
         description: string;

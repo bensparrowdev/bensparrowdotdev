@@ -109,6 +109,7 @@ nav span {
   background: #021013;
   @apply dark:w-12 dark:bg-primary_dark;
 }
+
 .toggle-switch,
 .toggle-switch:before,
 .toggle-switch:after {

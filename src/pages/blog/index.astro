@@ -1,21 +1,20 @@
 ---
-import { contentfulClient } from "../lib/contentful";
-import type { BlogPost } from "../lib/contentful";
-import Layout from "../layouts/Layout.astro";
-import ArticleCard from "../components/blog/ArticleCard.astro";
+import { contentfulClient, type BlogPost } from "../../lib/contentful";
+import Layout from "../../layouts/Layout.astro";
+import ArticleCard from "../../components/blog/ArticleCard.astro";
 
 // Blog post data
-const entries = await contentfulClient.getEntries<BlogPost>({
+const { items } = await contentfulClient.getEntries<BlogPost>({
   content_type: "blogPost",
 });
 
-const { posts = entries.items } = Astro.props;
+const { posts = items } = Astro.props;
 ---
 
 <Layout
   title="Blog | bensparrowdev"
   description="Welcome to my blog. Here you'll find articles around web development, how technology can solve business problems, and my journey as a freelance developer."
-  bgText="thinker"
+  bgText="ponderer"
 >
   <section class="container-lg mx-auto mb-32">
     <h1>Blog.</h1>
