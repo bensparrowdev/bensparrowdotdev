@@ -20,7 +20,7 @@ export async function getStaticPaths() {
         slug,
         readTime,
         featuredImage,
-        body: marked.parse(blogContent),
+        content: marked.parse(blogContent),
         date: new Date(item.sys.updatedAt).toLocaleDateString("en-gb", {
           year: "numeric",
           month: "long",
@@ -32,10 +32,29 @@ export async function getStaticPaths() {
 
   return pages;
 }
+
+const { title, tags, readTime, content, date } = Astro.props;
 ---
 
-<Layout title="... | bensparrowdev" description="" bgText="ponderer">
+<Layout
+  title={`${title.substring(0, 20)} | bensparrowdev`}
+  description={title}
+  bgText="ponderer"
+>
   <section class="container-lg mx-auto mb-32">
-    <h1>Blog.</h1>
+    <h1>{title}.</h1>
+    <time>{date}</time> - <span
+      >{`${readTime} ${readTime > 1 ? "mins" : "min"} read`}</span
+    >
+    <div>
+      {
+        tags.map((tag) => (
+          <div class="font-ubuntu_mono text-sm border rounded py-1 px-2 my-2 mr-2 inline-block">
+            {tag}
+          </div>
+        ))
+      }
+    </div>
+    <article set:html={content} />
   </section>
 </Layout>

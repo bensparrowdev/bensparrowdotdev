@@ -44,19 +44,19 @@ h1 {
   @apply text-4xl sm:text-6xl mb-8;
 }
 h2 {
-  @apply text-5xl;
+  @apply text-5xl mb-6;
 }
 h3 {
-  @apply text-4xl mb-6;
+  @apply text-4xl mb-4;
 }
 h4 {
-  @apply text-3xl;
+  @apply text-3xl mb-4;
 }
 h5 {
-  @apply text-2xl;
+  @apply text-2xl mb-4;
 }
 h6 {
-  @apply text-xl;
+  @apply text-xl mb-4;
 }
 
 h1,
@@ -231,6 +231,20 @@ nav span {
     text-shadow: none;
     transform: none;
   }
+}
+
+/* Blog Markdown */
+article pre {
+  @apply border-2 border-accent dark:border-accent_dark bg-accent/25 dark:bg-accent_dark/25 p-2 rounded-md mb-6;
+}
+article pre code {
+  @apply font-ubuntu_mono;
+}
+article img {
+  @apply mx-auto max-h-[800px] my-6;
+}
+article iframe {
+  @apply mx-auto my-6;
 }
 
 /* Misc */
