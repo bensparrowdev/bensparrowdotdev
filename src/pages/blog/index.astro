@@ -18,6 +18,13 @@ const { posts = items } = Astro.props;
 >
   <section class="container-lg mx-auto mb-32">
     <h1>Blog.</h1>
+    <div class="container mb-16">
+      <p>
+        On this page, discover my irregular and occasional writings on web
+        development, technology, freelancing and other things I feel important
+        enough to blog about.
+      </p>
+    </div>
     <div class="container grid lg:grid-cols-3 auto-rows-fr gap-8">
       {
         posts.map((post) => (
