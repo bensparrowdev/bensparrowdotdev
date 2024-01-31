@@ -78,20 +78,25 @@ nav span {
 }
 
 /* CUSTOM CLASSES */
-.container-lg {
-  @apply max-w-screen-lg mx-auto;
+
+@layer base {
+  .container-lg {
+    @apply max-w-screen-lg mx-auto;
+  }
+
+  .container-md {
+    @apply max-w-screen-md mx-auto;
+  }
 }
 
-.container-md {
-  @apply max-w-screen-md mx-auto;
-}
+@layer components {
+  .default-btn {
+    @apply py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-150 text-accent  bg-primary hover:text-body hover:bg-accent dark:text-accent_dark  dark:bg-primary_dark  dark:hover:text-body_dark  dark:hover:bg-accent_dark disabled:cursor-not-allowed;
+  }
 
-.default-btn {
-  @apply py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-150 text-accent  bg-primary hover:text-body hover:bg-accent dark:text-accent_dark  dark:bg-primary_dark  dark:hover:text-body_dark  dark:hover:bg-accent_dark disabled:cursor-not-allowed;
-}
-
-.code-block-btn {
-  @apply py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 text-lg lowercase font-ubuntu_mono text-body bg-accent hover:text-primary hover:bg-accent2 dark:text-body_dark dark:bg-accent_dark dark:hover:text-primary_dark dark:hover:bg-accent2_dark;
+  .code-block-btn {
+    @apply py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 text-lg lowercase font-ubuntu_mono text-body bg-accent hover:text-primary hover:bg-accent2 dark:text-body_dark dark:bg-accent_dark dark:hover:text-primary_dark dark:hover:bg-accent2_dark;
+  }
 }
 
 /* dark-mode switch */

@@ -5,3 +5,8 @@ interface ImportMetaEnv {
   readonly CONTENTFUL_DELIVERY_TOKEN: string;
   readonly CONTENTFUL_PREVIEW_TOKEN: string;
 }
+
+// Google Analytics types
+interface Window {
+  dataLayer?: object[];
+}

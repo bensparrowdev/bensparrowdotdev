@@ -46,7 +46,7 @@ const { title, tags, readTime, content, date } = Astro.props;
     <time>{date}</time> - <span
       >{`${readTime} ${readTime > 1 ? "mins" : "min"} read`}</span
     >
-    <div>
+    <div class="mb-8">
       {
         tags.map((tag) => (
           <div class="font-ubuntu_mono text-sm border rounded py-1 px-2 my-2 mr-2 inline-block">

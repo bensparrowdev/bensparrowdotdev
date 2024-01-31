@@ -1,5 +1,5 @@
 ---
-import Button from "../components/Button";
+import CodeBlock from "../components/CodeBlock";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -21,31 +21,13 @@ import Layout from "../layouts/Layout.astro";
       development.
     </p>
     <p>
-      Feel free to check out my <Button
-        client:idle
-        text="projects"
-        link="/projects"
-        type="code-block"
-      />, explore posts on my <Button
-        client:idle
-        text="blog"
-        link="/blog"
-        type="code-block"
-      />, learn more <Button
-        client:idle
+      Feel free to check out my <CodeBlock text="projects" link="/projects" />,
+      explore posts on my <CodeBlock text="blog" link="/blog" />, learn more <CodeBlock
         text="about me"
         link="/about"
-        type="code-block"
-      />, <Button
-        client:idle
-        text="get in touch"
-        link="/contact"
-        type="code-block"
-      />, or email me at <Button
-        client:idle
+      />, <CodeBlock text="get in touch" link="/contact" />, or email me at <CodeBlock
         text="hello@bensparrow.dev"
         link="mailto:hello@bensparrow.dev"
-        type="code-block"
       />.
     </p>
     <div class="flex gap-4 text-body dark:text-body_dark mt-8">

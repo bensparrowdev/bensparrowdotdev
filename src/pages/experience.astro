@@ -32,6 +32,7 @@ const { experiences = entries.items } = Astro.props;
           const { fields } = item.fields.logo;
           return (
             <Accordion
+              client:load
               title={title}
               company={company}
               logo={fields}
@@ -40,7 +41,6 @@ const { experiences = entries.items } = Astro.props;
               link={link}
               description={description}
               techStack={techStack}
-              client:load
               isOpen={i === 0 ? true : false}
             />
           );

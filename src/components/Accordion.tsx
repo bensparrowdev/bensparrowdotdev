@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Button from "./Button";
+import CodeBlock from "./CodeBlock";
 
 export default function Accordion({
   isOpen,
@@ -81,7 +81,7 @@ export default function Accordion({
         </div>
         <div className="flex flex-wrap gap-3 ">
           {techStack.map((t, i) => {
-            return <Button key={i} text={t} type="code-block" />;
+            return <CodeBlock key={i} text={t} />;
           })}
         </div>
       </div>
