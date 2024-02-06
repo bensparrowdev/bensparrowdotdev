@@ -49,7 +49,7 @@ const { title, tags, readTime, content, date } = Astro.props;
     <div class="mb-8">
       {
         tags.map((tag) => (
-          <div class="font-ubuntu_mono text-sm border rounded py-1 px-2 my-2 mr-2 inline-block">
+          <div class="font-ubuntu_mono text-sm border border-body dark:border-body_dark rounded py-1 px-2 my-2 mr-2 inline-block">
             {tag}
           </div>
         ))

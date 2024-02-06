@@ -1,7 +1,7 @@
 ---
 import { contentfulClient, type BlogPost } from "../../lib/contentful";
 import Layout from "../../layouts/Layout.astro";
-import ArticleCard from "../../components/blog/ArticleCard.astro";
+import ArticleListItem from "../../components/blog/ArticleListItem.astro";
 
 // Blog post data
 const { items } = await contentfulClient.getEntries<BlogPost>({
@@ -20,17 +20,22 @@ const { posts = items } = Astro.props;
     <h1>Blog.</h1>
     <div class="container mb-16">
       <p>
-        On this page, discover my irregular and occasional writings on web
-        development, technology, freelancing and other things I feel important
-        enough to blog about.
+        On this page, discover my irregular and occasional blog posts on web
+        development, technology, freelancing and other things I feel are
+        important to write about.
       </p>
     </div>
-    <div class="container grid lg:grid-cols-3 auto-rows-fr gap-8">
-      {
-        posts.map((post) => (
-          <ArticleCard fields={post.fields} dateCreated={post.sys.updatedAt} />
-        ))
-      }
+    <div class="container-md">
+      <ul>
+        {
+          posts.map((post) => (
+            <ArticleListItem
+              fields={post.fields}
+              dateCreated={post.sys.updatedAt}
+            />
+          ))
+        }
+      </ul>
     </div>
   </section>
 </Layout>
