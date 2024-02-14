@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import image from "@astrojs/image";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
@@ -21,5 +21,8 @@ export default defineConfig({
   site: "https://bensparrow.dev",
   server: {
     host: true,
+  },
+  experimental: {
+    assets: true,
   },
 });

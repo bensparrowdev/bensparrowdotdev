@@ -1,5 +1,5 @@
 ---
-const { title, tags, featuredImage, readTime, slug } = Astro.props.fields;
+const { title, tags, slug } = Astro.props.fields;
 const day = new Date(Astro.props.dateCreated).toLocaleDateString("en-gb", {
   day: "numeric",
 });

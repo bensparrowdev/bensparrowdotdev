@@ -1,6 +1,7 @@
 ---
 import { contentfulClient, type BlogPost } from "../../lib/contentful";
 import { marked } from "marked";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -33,7 +34,7 @@ export async function getStaticPaths() {
   return pages;
 }
 
-const { title, tags, readTime, content, date } = Astro.props;
+const { title, tags, readTime, content, date, featuredImage } = Astro.props;
 ---
 
 <Layout
@@ -42,11 +43,27 @@ const { title, tags, readTime, content, date } = Astro.props;
   bgText="ponderer"
 >
   <section class="container-lg mx-auto mb-32">
-    <h1>{title}.</h1>
+    <h1 class="leading-tight">
+      {title}.
+    </h1>
+    {
+      featuredImage && (
+        <div class="mb-4 max-h-[33rem] overflow-hidden">
+          <Image
+            src={featuredImage.fields.file.url + "?w=1024"}
+            alt={featuredImage.fields.description}
+            width={500}
+            height={330}
+            loading="eager"
+            class="hidden lg:block w-full h-full object-cover object-center"
+          />
+        </div>
+      )
+    }
     <time>{date}</time> - <span
       >{`${readTime} ${readTime > 1 ? "mins" : "min"} read`}</span
     >
-    <div class="mb-8">
+    <div class="mb-8 mt-2">
       {
         tags.map((tag) => (
           <div class="font-ubuntu_mono text-sm border border-body dark:border-body_dark rounded py-1 px-2 my-2 mr-2 inline-block">
@@ -55,6 +72,7 @@ const { title, tags, readTime, content, date } = Astro.props;
         ))
       }
     </div>
+
     <article set:html={content} />
   </section>
 </Layout>
