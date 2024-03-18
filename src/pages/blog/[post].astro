@@ -1,12 +1,12 @@
 ---
-import { contentfulClient, type BlogPost } from "../../lib/contentful";
-import { marked } from "marked";
-import { Image } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
+import { contentfulClient, type BlogPost } from '../../lib/contentful';
+import { marked } from 'marked';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries<BlogPost>({
-    content_type: "blogPost",
+    content_type: 'blogPost',
   });
 
   const pages = items.map((item) => {
@@ -22,10 +22,10 @@ export async function getStaticPaths() {
         readTime,
         featuredImage,
         content: marked.parse(blogContent),
-        date: new Date(item.sys.updatedAt).toLocaleDateString("en-gb", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
+        date: new Date(item.sys.updatedAt).toLocaleDateString('en-gb', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
         }),
       },
     };
@@ -50,7 +50,7 @@ const { title, tags, readTime, content, date, featuredImage } = Astro.props;
       featuredImage && (
         <div class="mb-4 max-h-[33rem] overflow-hidden">
           <Image
-            src={featuredImage.fields.file.url + "?w=1024"}
+            src={featuredImage.fields.file.url + '?w=1024'}
             alt={featuredImage.fields.description}
             width={500}
             height={330}
@@ -61,7 +61,7 @@ const { title, tags, readTime, content, date, featuredImage } = Astro.props;
       )
     }
     <time>{date}</time> - <span
-      >{`${readTime} ${readTime > 1 ? "mins" : "min"} read`}</span
+      >{`${readTime} ${readTime > 1 ? 'mins' : 'min'} read`}</span
     >
     <div class="mb-8 mt-2">
       {
@@ -74,5 +74,39 @@ const { title, tags, readTime, content, date, featuredImage } = Astro.props;
     </div>
 
     <article set:html={content} />
+
+    <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+      <p class="mb-0">Follow me on:</p>
+      <a
+        href="https://twitter.com/bensparrowdev"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow twitter profile"
+      >
+        <i
+          class="fa-brands fa-x-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/ben-sparrow/"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow linkedin profile"
+      >
+        <i
+          class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+      <a
+        href="https://github.com/bensparrowdev"
+        target="_blank"
+        rel="external"
+        aria-label="Ben Sparrow Github repositories"
+      >
+        <i
+          class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+        ></i>
+      </a>
+    </div>
   </section>
 </Layout>

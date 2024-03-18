@@ -1,12 +1,12 @@
 ---
-import MainHead from "../components/layout/MainHead.astro";
-import Header from "../components/layout/Header.astro";
-import CookieBanner from "../components/layout/CookieBanner.astro";
+import MainHead from '../components/layout/MainHead.astro';
+import Header from '../components/layout/Header.astro';
+import CookieBanner from '../components/layout/CookieBanner.astro';
 
 const {
-  title = "bensparrowdev Portfolio",
+  title = 'bensparrowdev Portfolio',
   description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.",
-  bgText = "web developer",
+  bgText = 'web developer',
 } = Astro.props;
 ---
 
@@ -32,6 +32,10 @@ const {
       >
         {bgText}
       </h1>
+      <span
+        class="text-xs fixed bottom-0 right-2 px-1 bg-secondary dark:bg-secondary_dark dark:text-body_dark"
+        >© {new Date().getFullYear()} ben sparrow - all rights reserved.</span
+      >
     </main>
   </body>
 </html>
