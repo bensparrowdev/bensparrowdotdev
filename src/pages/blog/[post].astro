@@ -46,67 +46,67 @@ const { title, tags, readTime, content, date, featuredImage } = Astro.props;
     <h1 class="leading-tight">
       {title}.
     </h1>
-    {
-      featuredImage && (
-        <div class="mb-4 max-h-[33rem] overflow-hidden">
+    <div class="container-md">
+      {
+        featuredImage && (
           <Image
-            src={featuredImage.fields.file.url + '?w=1024'}
+            src={featuredImage.fields.file.url + '?w=800&fm=webp'}
             alt={featuredImage.fields.description}
-            width={500}
+            width={1024}
             height={330}
             loading="eager"
-            class="hidden lg:block w-full h-full object-cover object-center"
+            class="w-full max-h-[33rem] object-contain object-center mb-4"
           />
-        </div>
-      )
-    }
-    <time>{date}</time> - <span
-      >{`${readTime} ${readTime > 1 ? 'mins' : 'min'} read`}</span
-    >
-    <div class="mb-8 mt-2">
-      {
-        tags.map((tag) => (
-          <div class="font-ubuntu_mono text-sm border border-body dark:border-body_dark rounded py-1 px-2 my-2 mr-2 inline-block">
-            {tag}
-          </div>
-        ))
+        )
       }
-    </div>
+      <time>{date}</time> - <span
+        >{`${readTime} ${readTime > 1 ? 'mins' : 'min'} read`}</span
+      >
+      <div class="mb-8 mt-2">
+        {
+          tags.map((tag) => (
+            <div class="font-ubuntu_mono text-sm border border-body dark:border-body_dark rounded py-1 px-2 my-2 mr-2 inline-block">
+              {tag}
+            </div>
+          ))
+        }
+      </div>
 
-    <article set:html={content} />
+      <article set:html={content} />
 
-    <div class="flex gap-4 text-body dark:text-body_dark mt-8">
-      <p class="mb-0">Follow me on:</p>
-      <a
-        href="https://twitter.com/bensparrowdev"
-        target="_blank"
-        rel="external"
-        aria-label="Ben Sparrow twitter profile"
-      >
-        <i
-          class="fa-brands fa-x-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/ben-sparrow/"
-        target="_blank"
-        rel="external"
-        aria-label="Ben Sparrow linkedin profile"
-      >
-        <i
-          class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
-      </a>
-      <a
-        href="https://github.com/bensparrowdev"
-        target="_blank"
-        rel="external"
-        aria-label="Ben Sparrow Github repositories"
-      >
-        <i
-          class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
-      </a>
+      <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+        <p class="mb-0">Follow me on:</p>
+        <a
+          href="https://twitter.com/bensparrowdev"
+          target="_blank"
+          rel="external"
+          aria-label="Ben Sparrow twitter profile"
+        >
+          <i
+            class="fa-brands fa-x-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+          ></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ben-sparrow/"
+          target="_blank"
+          rel="external"
+          aria-label="Ben Sparrow linkedin profile"
+        >
+          <i
+            class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+          ></i>
+        </a>
+        <a
+          href="https://github.com/bensparrowdev"
+          target="_blank"
+          rel="external"
+          aria-label="Ben Sparrow Github repositories"
+        >
+          <i
+            class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
+          ></i>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
