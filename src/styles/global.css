@@ -1,5 +1,5 @@
 /* import fonts & tailwind */
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -176,6 +176,15 @@ nav span {
   background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
 }
 
+@media screen and (max-width: 640px) {
+  .card-bg {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.1) 10%,
+      rgba(0, 0, 0, 0.78) 80%
+    );
+  }
+}
+
 /* Title animation */
 .stack {
   display: grid;
@@ -250,6 +259,19 @@ article img {
 }
 article iframe {
   @apply mx-auto my-6;
+}
+
+/* Projects */
+.project-about ul {
+  @apply list-disc ml-6;
+}
+
+.project-about ul li {
+  @apply mb-4;
+}
+
+.project-about ul li > * {
+  @apply m-0;
 }
 
 /* Misc */

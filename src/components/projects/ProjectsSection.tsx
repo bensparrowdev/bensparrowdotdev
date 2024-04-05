@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Tabs from "./Tabs";
-import Card from "./Card";
-import SideDrawer from "./SideDrawer";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Tabs from './Tabs';
+import Card from './Card';
+import SideDrawer from './SideDrawer';
 
 type ProjectData = {
   techStack: string[];
@@ -10,23 +10,23 @@ type ProjectData = {
 };
 
 export default function ProjectsSection({ projects }) {
-  const [currentTab, setCurrentTab] = useState<string>("all");
+  const [currentTab, setCurrentTab] = useState<string>('all');
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [projectData, setProjectData] = useState<ProjectData>({
-    techStack: ["null"],
-    tags: ["null"],
+    techStack: ['null'],
+    tags: ['null'],
   });
 
   const renderCards = (data) => {
     let filteredData = [];
 
-    if (currentTab === "all") filteredData = data;
-    if (currentTab === "website")
+    if (currentTab === 'all') filteredData = data;
+    if (currentTab === 'website')
       filteredData = data.filter((proj) =>
-        proj.fields.tags.includes("website")
+        proj.fields.tags.includes('website')
       );
-    if (currentTab === "app")
-      filteredData = data.filter((proj) => proj.fields.tags.includes("app"));
+    if (currentTab === 'app')
+      filteredData = data.filter((proj) => proj.fields.tags.includes('app'));
 
     return filteredData;
   };
@@ -37,13 +37,14 @@ export default function ProjectsSection({ projects }) {
       <motion.div
         animate={{ y: 0 }}
         initial={{ y: 50 }}
-        transition={{ duration: 0.5, type: "spring" }}
+        transition={{ duration: 0.5, type: 'spring' }}
         className="columns-1 sm:columns-2 gap-6 overflow-hidden"
       >
         {renderCards(projects).map((proj, i) => {
           return (
             <Card
               key={i}
+              index={i}
               project={proj.fields}
               drawerOpen={drawerOpen}
               setDrawerOpen={setDrawerOpen}

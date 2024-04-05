@@ -1,11 +1,11 @@
 ---
-import { contentfulClient, type Project } from "../lib/contentful";
-import Layout from "../layouts/Layout.astro";
-import ProjectsSection from "../components/projects/ProjectsSection";
+import { contentfulClient, type Project } from '../lib/contentful';
+import Layout from '../layouts/Layout.astro';
+import ProjectsSection from '../components/projects/ProjectsSection';
 
 // project data
 const entries = await contentfulClient.getEntries<Project>({
-  content_type: "projects",
+  content_type: 'projects',
 });
 
 const { projects = entries.items } = Astro.props;
@@ -18,7 +18,7 @@ const { projects = entries.items } = Astro.props;
 >
   <section class="container-lg mx-auto">
     <h1>Projects.</h1>
-    <div class="container-lg">
+    <div class="container-lg projects">
       <ProjectsSection client:visible projects={projects} />
     </div>
   </section>
