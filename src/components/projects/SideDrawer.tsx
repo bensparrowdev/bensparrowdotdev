@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import brandicons from '../../assets/brandicons';
+import brandicons from '@assets/brandicons';
 
 export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   const image = project.image?.fields || '';

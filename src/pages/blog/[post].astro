@@ -3,7 +3,7 @@ import { contentfulClient, type BlogPost } from '../../lib/contentful';
 import { marked } from 'marked';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import brandicons from '../../assets/brandicons';
+import brandicons from '@assets/brandicons';
 
 export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries<BlogPost>({
