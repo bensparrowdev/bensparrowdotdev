@@ -323,3 +323,11 @@ aside > div::-webkit-scrollbar {
   content: '';
   @apply block w-6 h-6 absolute left-0 mt-3 border-4 rounded-full;
 }
+
+.shopify-logo {
+  @apply dark:fill-white;
+}
+
+.price-card .shopify-logo {
+  @apply dark:fill-black;
+}

@@ -2,6 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import clothingStore from '../assets/images/clothing-store.jpeg';
+import brandicons from '@assets/brandicons';
+import Card from '../components/shopify/Card.astro';
+
+const packageOne = [
+  'Ideal for small, expanding businesses',
+  'Fast-track to market',
+  'Cost-effective for limited budgets',
+];
+const packageTwo = [
+  'Tailored for established brands seeking unique features',
+  'Bespoke design and functionality',
+  'Enhanced UX and integration capabilities',
+];
+const packageThree = [
+  'Best for brands prioritising scalability and performance',
+  'Built with modern technologies  for fast user interfaces',
+  'Integrates seamlessly with existing systems/technologies',
+];
 ---
 
 <Layout
@@ -9,9 +27,9 @@ import clothingStore from '../assets/images/clothing-store.jpeg';
   description="Ben Sparrow provides professional Shopify theme development to merchants looking to deliver the best ecommerce experience to their customers."
   bgText="e-commerce"
 >
-  <section class="container-lg mx-auto">
-    <h1>Shopify Theme Builds.</h1>
-    <div class="flex">
+  <section class="container-lg mx-auto mb-64">
+    <h1 class="relative z-10 drop-shadow-2xl">Shopify Theme Builds.</h1>
+    <div class="flex items-center flex-col-reverse md:flex-row lg:items-end">
       <div class="flex-1 w-full">
         <p class="">
           A customised Shopify Theme designed to enhance conversion rates,
@@ -20,17 +38,51 @@ import clothingStore from '../assets/images/clothing-store.jpeg';
           positioning and a focus on creating an engaging Customer Experience
           (CX).
         </p>
+        <Fragment set:html={brandicons.shopify} class:list={['shopify-logo']} />
       </div>
-      <div class="flex-1 w-full">
+      <div class="flex-1 relative">
         <Image
           src={clothingStore}
           alt="inside of a clothes with tshirts hanging up, hoodies folded and bags on a shelf"
           width="435"
           height="435"
           loading="eager"
-          class="object-contain object-center mb-4"
+          class="w-[435px] h-auto mb-8 aspect-square object-cover bottom-0 right-0 z-0 rounded-md shadow-2xl md:mb-0 lg:absolute lg:aspect-auto lg:h-[400px]"
         />
+        <div
+          class="hidden lg:block lg:w-[435px] h-[400px] absolute bottom-0 right-0 rounded-md bg-gradient-to-tl from-transparent via-transparent to-secondary opacity-80 dark:to-secondary_dark"
+        >
+        </div>
       </div>
+    </div>
+  </section>
+  <!-- <span>enter shopify logo here</span> -->
+  <section class="container-xl mx-auto h-[100vh] lg:px-40">
+    <div class="text-center">
+      <h3>Theme Builds.</h3>
+      <p>Services for brands of all sizes</p>
+    </div>
+    <div class="grid grid-cols-3 gap-12">
+      <Card
+        logo={brandicons.shopify}
+        timeEst="1"
+        title="Basic Build"
+        list={packageOne}
+        price="5000"
+      />
+      <Card
+        logo={brandicons.shopify}
+        timeEst="3"
+        title="Custom Build"
+        list={packageTwo}
+        price="15,000"
+      />
+      <Card
+        logo={brandicons.react}
+        timeEst="3"
+        title="Headless Store"
+        list={packageThree}
+      />
     </div>
   </section>
 </Layout>
