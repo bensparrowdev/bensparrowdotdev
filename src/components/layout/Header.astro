@@ -1,5 +1,6 @@
 ---
-import ThemeSwitch from "../layout/ThemeSwitch.astro";
+import ThemeSwitch from '../layout/ThemeSwitch.astro';
+import brandicons from '../../assets/brandicons';
 ---
 
 <header class="py-6 sm:py-12 mb-12 md:mb-20">
@@ -89,7 +90,7 @@ import ThemeSwitch from "../layout/ThemeSwitch.astro";
         <h2 class="mb-1 mt-3 text-xl font-semibold leading-normal">
           follow me on
         </h2>
-        <div class="flex gap-x-6 mt-3 text-body dark:text-body_dark">
+        <div class="flex gap-x-4 mt-3 social-icons">
           <a
             href="https://twitter.com/bensparrowdev"
             target="_blank"
@@ -97,9 +98,7 @@ import ThemeSwitch from "../layout/ThemeSwitch.astro";
             class="border-0 hover:border-0"
             aria-label="Ben Sparrow twitter profile"
           >
-            <i
-              class="fa-brands fa-x-twitter fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.twitter} />
           </a>
           <a
             href="https://www.linkedin.com/in/ben-sparrow/"
@@ -108,9 +107,7 @@ import ThemeSwitch from "../layout/ThemeSwitch.astro";
             class="border-0 hover:border-0"
             aria-label="Ben Sparrow linkedin profile"
           >
-            <i
-              class="fa-brands fa-linkedin-in fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.linkedin} />
           </a>
           <a
             href="https://github.com/bensparrowdev"
@@ -119,9 +116,7 @@ import ThemeSwitch from "../layout/ThemeSwitch.astro";
             class="border-0 hover:border-0"
             aria-label="Ben Sparrow Github repositories"
           >
-            <i
-              class="fa-brands fa-github fa-lg hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.github} />
           </a>
         </div>
         <div class="mt-3 leading-normal">
@@ -133,36 +128,36 @@ import ThemeSwitch from "../layout/ThemeSwitch.astro";
 </header>
 
 <script>
-  const open = document.querySelector(".menu"),
-    close = document.querySelector(".close"),
-    wrapper = document.querySelector(".wrapper"),
-    firstHalf = document.querySelector(".menu-first-half"),
-    secondHalf = document.querySelector(".menu-second-half"),
-    body = document.querySelector("body");
+  const open = document.querySelector('.menu'),
+    close = document.querySelector('.close'),
+    wrapper = document.querySelector('.wrapper'),
+    firstHalf = document.querySelector('.menu-first-half'),
+    secondHalf = document.querySelector('.menu-second-half'),
+    body = document.querySelector('body');
 
-  open.addEventListener("click", () => {
-    body.classList.add("overflow-hidden");
-    wrapper.classList.add("h-full");
-    wrapper.classList.remove("h-0");
+  open.addEventListener('click', () => {
+    body.classList.add('overflow-hidden');
+    wrapper.classList.add('h-full');
+    wrapper.classList.remove('h-0');
 
-    open.classList.add("menu--hide");
-    close.classList.add("close--show");
-    firstHalf.classList.add("menu-first-half--show");
-    secondHalf.classList.add("menu-second-half--show");
+    open.classList.add('menu--hide');
+    close.classList.add('close--show');
+    firstHalf.classList.add('menu-first-half--show');
+    secondHalf.classList.add('menu-second-half--show');
   });
 
-  close.addEventListener("click", () => {
-    body.classList.remove("overflow-hidden");
-    open.classList.remove("menu--hide");
-    close.classList.remove("close--show");
-    firstHalf.classList.remove("menu-first-half--show");
-    secondHalf.classList.remove("menu-second-half--show");
+  close.addEventListener('click', () => {
+    body.classList.remove('overflow-hidden');
+    open.classList.remove('menu--hide');
+    close.classList.remove('close--show');
+    firstHalf.classList.remove('menu-first-half--show');
+    secondHalf.classList.remove('menu-second-half--show');
   });
 
-  firstHalf.addEventListener("transitionend", () => {
-    if (!firstHalf.classList.contains("menu-first-half--show")) {
-      wrapper.classList.remove("h-full");
-      wrapper.classList.add("h-0");
+  firstHalf.addEventListener('transitionend', () => {
+    if (!firstHalf.classList.contains('menu-first-half--show')) {
+      wrapper.classList.remove('h-full');
+      wrapper.classList.add('h-0');
     }
   });
 </script>

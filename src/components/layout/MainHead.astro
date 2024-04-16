@@ -1,5 +1,5 @@
 ---
-import "../../styles/global.css";
+import '../../styles/global.css';
 
 interface Props {
   title: string;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "bensparrowdev Portfolio",
+  title = 'bensparrowdev Portfolio',
   description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.",
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,91 +22,87 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <script
-    src="https://kit.fontawesome.com/f5339c6b8f.js"
-    crossorigin="anonymous"
-  ></script>
 </head>
 
 <script>
   export function setCookie(name, value, days) {
-    let expires = "";
+    let expires = '';
     if (days) {
       var date = new Date();
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      expires = "; expires=" + date.toUTCString();
+      expires = '; expires=' + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    document.cookie = name + '=' + (value || '') + expires + '; path=/';
   }
 
   export function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(";");
+    const nameEQ = name + '=';
+    const ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) == " ") c = c.substring(1, c.length);
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
       if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
   }
 
   window.onload = function () {
-    if (!getCookie("userConsent"))
-      document.getElementById("cookie-banner").classList.remove("hidden");
-    else if (getCookie("userConsent") === "accepted") {
+    if (!getCookie('userConsent'))
+      document.getElementById('cookie-banner').classList.remove('hidden');
+    else if (getCookie('userConsent') === 'accepted') {
       loadGoogleAnalytics();
       loadGoogleTagManager();
-    } else document.getElementById("cookie-banner").classList.add("hidden");
+    } else document.getElementById('cookie-banner').classList.add('hidden');
   };
 
   function hideConsentBanner() {
-    document.getElementById("cookie-banner").style.display = "none";
+    document.getElementById('cookie-banner').style.display = 'none';
   }
 
   function loadGoogleAnalytics() {
-    const script = document.createElement("script");
-    script.type = "text/partytown";
+    const script = document.createElement('script');
+    script.type = 'text/partytown';
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-L07TB315QM";
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-L07TB315QM';
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
     function gtag(...args: any[]) {
       window.dataLayer.push(arguments);
     }
-    gtag("js", new Date());
-    gtag("config", "G-L07TB315QM");
+    gtag('js', new Date());
+    gtag('config', 'G-L07TB315QM');
   }
 
   function loadGoogleTagManager() {
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({
-        "gtm.start": new Date().getTime(),
-        event: "gtm.js",
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js',
       });
       var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s) as HTMLScriptElement,
-        dl = l != "dataLayer" ? "&l=" + l : "";
+        dl = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-KMSX8SC");
+    })(window, document, 'script', 'dataLayer', 'GTM-KMSX8SC');
   }
 
   document
-    .getElementById("accept-cookies")
-    .addEventListener("click", function () {
-      setCookie("userConsent", "accepted", 30);
+    .getElementById('accept-cookies')
+    .addEventListener('click', function () {
+      setCookie('userConsent', 'accepted', 30);
       loadGoogleAnalytics();
       loadGoogleTagManager();
       hideConsentBanner();
     });
 
   document
-    .getElementById("reject-cookies")
-    .addEventListener("click", function () {
-      setCookie("userConsent", "rejected", 7);
+    .getElementById('reject-cookies')
+    .addEventListener('click', function () {
+      setCookie('userConsent', 'rejected', 7);
       hideConsentBanner();
     });
 </script>

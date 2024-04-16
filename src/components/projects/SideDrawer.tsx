@@ -1,4 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import brandicons from '../../assets/brandicons';
 
 export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
   const image = project.image?.fields || '';
@@ -65,8 +66,12 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
           </div>
           {project.repo && (
             <>
-              <h6 className="capitalize mb-2">
-                Code <i className="fa-brands fa-github" aria-hidden></i>
+              <h6 className="capitalize mb-2 flex">
+                Code{' '}
+                <i
+                  dangerouslySetInnerHTML={{ __html: brandicons.github }}
+                  className="fill-primary dark:fill-primary_dark scale-90"
+                ></i>
               </h6>
               <a href={project.repo} target="_blank">
                 {`/${project.repo.split('/').at(-1)}`}

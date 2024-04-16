@@ -1,6 +1,7 @@
 ---
-import CodeBlock from "../components/CodeBlock";
-import Layout from "../layouts/Layout.astro";
+import CodeBlock from '../components/CodeBlock';
+import Layout from '../layouts/Layout.astro';
+import brandicons from '../assets/brandicons';
 ---
 
 <Layout
@@ -30,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
         link="mailto:hello@bensparrow.dev"
       />.
     </p>
-    <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+    <div class="flex gap-3 mt-8 social-icons">
       <p class="mb-0">Follow me on:</p>
       <a
         href="https://twitter.com/bensparrowdev"
@@ -38,9 +39,7 @@ import Layout from "../layouts/Layout.astro";
         rel="external"
         aria-label="Ben Sparrow twitter profile"
       >
-        <i
-          class="fa-brands fa-x-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
+        <Fragment set:html={brandicons.twitter} />
       </a>
       <a
         href="https://www.linkedin.com/in/ben-sparrow/"
@@ -48,9 +47,7 @@ import Layout from "../layouts/Layout.astro";
         rel="external"
         aria-label="Ben Sparrow linkedin profile"
       >
-        <i
-          class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
+        <Fragment set:html={brandicons.linkedin} />
       </a>
       <a
         href="https://github.com/bensparrowdev"
@@ -58,9 +55,7 @@ import Layout from "../layouts/Layout.astro";
         rel="external"
         aria-label="Ben Sparrow Github repositories"
       >
-        <i
-          class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-        ></i>
+        <Fragment set:html={brandicons.github} />
       </a>
     </div>
   </div>

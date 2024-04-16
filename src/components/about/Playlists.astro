@@ -1,3 +1,7 @@
+---
+import brandicons from '../../assets/brandicons';
+---
+
 <div class="playlist-list">
   <ul class="relative">
     <li class="before:border-primary dark:before:border-primary_dark">
@@ -9,9 +13,7 @@
           aria-label="deep code playlist"
         >
           deepCode
-          <i
-            class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"
-          ></i>
+          <Fragment set:html={brandicons.spotify} />
         </a>
       </h4>
       <p>
@@ -30,9 +32,7 @@
           aria-label="night rider playlist"
         >
           Night Rider
-          <i
-            class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"
-          ></i>
+          <Fragment set:html={brandicons.spotify} />
         </a>
       </h4>
       <p>Progressive house music for the late night highway.</p>
@@ -47,9 +47,7 @@
           aria-label="old school rock playlist"
         >
           oldSchoolRock
-          <i
-            class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"
-          ></i>
+          <Fragment set:html={brandicons.spotify} />
         </a>
       </h4>
       <p>
@@ -60,7 +58,7 @@
     </li>
 
     <li class="before:border-primary dark:before:border-primary_dark">
-      <h4 class="group">
+      <h4>
         <a
           href="https://open.spotify.com/playlist/2wSNKxLM217jpZnkAgYZPH?si=e31e031076554a26"
           rel="external"
@@ -68,9 +66,7 @@
           aria-label="Anjunadeep releases playlist"
         >
           Anjunadeep Releases
-          <i
-            class="fa-brands fa-spotify fa-xs group-hover:ml-1 group-hover:opacity-100"
-          ></i>
+          <Fragment set:html={brandicons.spotify} />
         </a>
       </h4>
       <p>All the 2023 releases from Anjunadeep as soon as they drop!</p>
@@ -78,25 +74,16 @@
   </ul>
 </div>
 
-<style type="text/css">
-  .playlist-list ul li {
+<style>
+  li {
     @apply pb-4 text-left sm:text-left flex flex-col;
   }
 
-  .playlist-list ul li h4 {
+  h4 {
     @apply mb-2 pl-10;
   }
 
-  .playlist-list ul li p {
+  p {
     @apply pl-10;
-  }
-
-  .playlist-list ul li h4 i {
-    @apply text-[#1DB954] -ml-6 opacity-0 transition-all ease-in-out duration-150;
-  }
-
-  .playlist-list ul li::before {
-    content: "";
-    @apply block w-6 h-6 absolute left-0 mt-3 border-4 rounded-full;
   }
 </style>

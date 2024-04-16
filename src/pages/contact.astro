@@ -1,7 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import CodeBlock from "../components/CodeBlock";
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import CodeBlock from '../components/CodeBlock';
+import brandicons from '../assets/brandicons';
 ---
 
 <Layout
@@ -25,12 +26,12 @@ import CodeBlock from "../components/CodeBlock";
     <div class="grid lg:grid-cols-2 lg:pb-20 gap-4">
       <script type="text/javascript">
         var onloadCallback = function () {
-          document.querySelector(".contact-form button").disabled = true;
-          grecaptcha.render("recaptcha_ref", {
-            sitekey: "6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf",
+          document.querySelector('.contact-form button').disabled = true;
+          grecaptcha.render('recaptcha_ref', {
+            sitekey: '6LdZsAgmAAAAAAOzxjUlO24wbshAqkyhKbNIj_Uf',
             callback: function (response) {
               if (response) {
-                document.querySelector(".contact-form button").disabled = false;
+                document.querySelector('.contact-form button').disabled = false;
               }
             },
           });
@@ -122,34 +123,28 @@ import CodeBlock from "../components/CodeBlock";
       ></script>
 
       <div class="flex items-end justify-start lg:justify-center max-h-[570px]">
-        <div class="flex gap-4 text-body dark:text-body_dark mt-8">
+        <div class="flex gap-4 mt-8 social-icons">
           <p class="mb-0">You can also find me on:</p>
           <a
             href="https://twitter.com/bensparrowdev"
             target="_blank"
             rel="external"
           >
-            <i
-              class="fa-brands fa-x-twitter fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.twitter} />
           </a>
           <a
             href="https://www.linkedin.com/in/ben-sparrow/"
             target="_blank"
             rel="external"
           >
-            <i
-              class="fa-brands fa-linkedin-in fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.linkedin} />
           </a>
           <a
             href="https://github.com/bensparrowdev"
             target="_blank"
             rel="external"
           >
-            <i
-              class="fa-brands fa-github fa-xl hover:text-primary dark:hover:text-primary_dark transition-colors duration-150 ease-in"
-            ></i>
+            <Fragment set:html={brandicons.github} />
           </a>
         </div>
       </div>
@@ -164,22 +159,22 @@ import CodeBlock from "../components/CodeBlock";
     const myForm = event.target as HTMLFormElement;
     const formData = new FormData(myForm);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as any).toString(),
     })
       .then(() => {
         myForm.reset();
-        document.getElementById("success").classList.remove("hidden");
+        document.getElementById('success').classList.remove('hidden');
       })
       .catch((error) => {
         console.log(error);
-        document.getElementById("fail").classList.remove("hidden");
+        document.getElementById('fail').classList.remove('hidden');
       });
   };
 
-  document.querySelector("form").addEventListener("submit", handleSubmit);
+  document.querySelector('form').addEventListener('submit', handleSubmit);
 </script>
 
 <style>

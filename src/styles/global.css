@@ -1,10 +1,16 @@
-/* import fonts & tailwind */
+/* 
+*** Fonts & tailwind 
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&family=Poppins:wght@200;400;600&family=Ubuntu+Mono&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* set global styles */
+/* 
+*** Global 
+*/
+
 * {
   @apply p-0 m-0 box-border;
 }
@@ -35,7 +41,6 @@ a {
 }
 
 p > a,
-.accordion-root,
 .menu-second-half a {
   @apply underline decoration-accent2 dark:decoration-accent2_dark hover:decoration-primary dark:hover:decoration-primary_dark transition-[text-decoration-color] duration-150 ease-in-out;
 }
@@ -77,7 +82,9 @@ nav span {
   @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-150 ease-in text-2xl font-light;
 }
 
-/* CUSTOM CLASSES */
+/* 
+*** CUSTOM CLASSES 
+*/
 
 @layer base {
   .container-lg {
@@ -99,7 +106,10 @@ nav span {
   }
 }
 
-/* dark-mode switch */
+/* 
+*** Dark-mode switch 
+*/
+
 .toggle-switch {
   margin: 0;
   padding: 0;
@@ -171,7 +181,10 @@ nav span {
   animation: none !important;
 }
 
-/* Cards */
+/* 
+*** Cards 
+*/
+
 .card-bg:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
 }
@@ -185,7 +198,10 @@ nav span {
   }
 }
 
-/* Title animation */
+/* 
+*** Title animation 
+*/
+
 .stack {
   display: grid;
   grid-template-columns: 1fr;
@@ -247,7 +263,10 @@ nav span {
   }
 }
 
-/* Blog Markdown */
+/* 
+*** Blog Markdown 
+*/
+
 article pre {
   @apply border-2 border-accent dark:border-accent_dark bg-accent/25 dark:bg-accent_dark/25 p-2 rounded-md mb-6;
 }
@@ -261,7 +280,10 @@ article iframe {
   @apply mx-auto my-6;
 }
 
-/* Projects */
+/* 
+*** Projects 
+*/
+
 .project-about ul {
   @apply list-disc ml-6;
 }
@@ -274,7 +296,30 @@ article iframe {
   @apply m-0;
 }
 
-/* Misc */
+/* 
+*** Misc 
+*/
 aside > div::-webkit-scrollbar {
   display: none;
+}
+
+.social-icons svg path {
+  @apply fill-body dark:fill-body_dark;
+}
+
+.social-icons svg:hover path {
+  @apply fill-primary dark:fill-primary_dark;
+}
+
+.playlist-list ul h4:hover svg {
+  @apply ml-0 opacity-100;
+}
+
+.playlist-list ul svg {
+  @apply inline-block scale-75 align-middle -ml-6 opacity-0 transition-all ease-in-out duration-150 group-hover:ml-1 group-hover:opacity-100;
+}
+
+.playlist-list ul li::before {
+  content: '';
+  @apply block w-6 h-6 absolute left-0 mt-3 border-4 rounded-full;
 }

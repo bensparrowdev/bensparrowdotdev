@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import clothingStore from '../assets/images/clothing-store.jpeg';
+---
+
+<Layout
+  title="Shopify Theme Builds | bensparrowdev"
+  description="Ben Sparrow provides professional Shopify theme development to merchants looking to deliver the best ecommerce experience to their customers."
+  bgText="e-commerce"
+>
+  <section class="container-lg mx-auto">
+    <h1>Shopify Theme Builds.</h1>
+    <div class="flex">
+      <div class="flex-1 w-full">
+        <p class="">
+          A customised Shopify Theme designed to enhance conversion rates,
+          performance, and optimisation, while also improving Lifetime Value
+          (LTV) and Average Order Value (AOV). Crafted with strategic
+          positioning and a focus on creating an engaging Customer Experience
+          (CX).
+        </p>
+      </div>
+      <div class="flex-1 w-full">
+        <Image
+          src={clothingStore}
+          alt="inside of a clothes with tshirts hanging up, hoodies folded and bags on a shelf"
+          width="435"
+          height="435"
+          loading="eager"
+          class="object-contain object-center mb-4"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
