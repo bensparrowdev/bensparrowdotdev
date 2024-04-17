@@ -1,26 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import clothingStore from '../assets/images/clothing-store.jpeg';
+import clothingStore from '@assets/images/clothing-store.jpeg';
 import brandicons from '@assets/brandicons';
+import { shopifyData } from '@data/content';
+
 import Card from '../components/shopify/Card.astro';
 import Content from 'components/shopify/Content.astro';
-
-const packageOne = [
-  'Ideal for small, expanding businesses',
-  'Fast-track to market',
-  'Cost-effective for limited budgets',
-];
-const packageTwo = [
-  'Tailored for established brands seeking unique features',
-  'Bespoke design and functionality',
-  'Enhanced UX and integration capabilities',
-];
-const packageThree = [
-  'Best for brands prioritising scalability and performance',
-  'Built with modern technologies  for fast user interfaces',
-  'Integrates seamlessly with existing systems/technologies',
-];
 ---
 
 <Layout
@@ -66,30 +52,32 @@ const packageThree = [
     <div
       class="grid grid-rows-auto grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-12 max-w-7xl mx-auto"
     >
-      <Card
-        logo={brandicons.shopify}
-        timeEst="1"
-        title="Basic Build"
-        list={packageOne}
-        price="5000"
-      />
-      <Card
-        logo={brandicons.shopify}
-        timeEst="3"
-        title="Custom Build"
-        list={packageTwo}
-        price="15,000"
-      />
-      <Card
-        logo={brandicons.react}
-        timeEst="3"
-        title="Headless Store"
-        list={packageThree}
-      />
+      {
+        shopifyData.price_cards.map((data) => (
+          <Card
+            logo={data.logo}
+            timeEst={data.timeEst}
+            title={data.title}
+            list={data.list}
+            price={data.price}
+          />
+        ))
+      }
     </div>
   </section>
 
   <section class="container-lg">
-    <Content />
+    {
+      shopifyData.content_sections.map((data) => (
+        <Content
+          image={data.image}
+          imageAlt={data.imageAlt}
+          pretitle={data.pretitle}
+          title={data.title}
+          body={data.body}
+          invert={data.invert}
+        />
+      ))
+    }
   </section>
 </Layout>

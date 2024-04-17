@@ -6,7 +6,8 @@
     "types": ["@astrojs/image/client"],
     "baseUrl": "./src",
     "paths": {
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@data/*": ["data/*"]
     }
   }
 }
