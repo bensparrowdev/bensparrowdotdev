@@ -3,7 +3,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
 ---
 
 <div
-  class={`price-card inline-block rounded-md py-7 px-5 dark:bg-primary_dark dark:text-accent_dark ${
+  class={`price-card rounded-md py-7 px-5 flex flex-col dark:bg-primary_dark dark:text-accent_dark w-96 md:w-[500px] mx-auto lg:w-auto ${
     title === 'Custom Build' && 'is-best-seller'
   }`}
 >
@@ -14,7 +14,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
       >avg. {timeEst ? timeEst : '1'} month</small
     >
   </div>
-  <div class="pb-5 mb-5 border-b dark:border-accent2_dark">
+  <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
     <h4 class="mb-3">{title ? title : 'Title'}</h4>
     <ul>
       {list && list.map((text) => <li>{text}</li>)}
@@ -46,12 +46,12 @@ const { logo, timeEst, title, list, price } = Astro.props;
 
 <style>
   ul li {
-    @apply flex items-center;
+    @apply flex items-center relative pl-6;
   }
 
   ul li::before {
     content: url(/checkmark.svg);
-    @apply mr-2 h-6 inline;
+    @apply absolute top-1 left-0;
   }
 
   .is-best-seller {

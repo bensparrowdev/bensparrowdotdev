@@ -1,11 +1,11 @@
 ---
-import { contentfulClient, type BlogPost } from "../../lib/contentful";
-import Layout from "../../layouts/Layout.astro";
-import ArticleListItem from "../../components/blog/ArticleListItem.astro";
+import { contentfulClient, type BlogPost } from '../../lib/contentful';
+import Layout from '../../layouts/Layout.astro';
+import ArticleListItem from '../../components/blog/ArticleListItem.astro';
 
 // Blog post data
 const { items } = await contentfulClient.getEntries<BlogPost>({
-  content_type: "blogPost",
+  content_type: 'blogPost',
 });
 
 const { posts = items } = Astro.props;
