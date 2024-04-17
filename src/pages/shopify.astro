@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import clothingStore from '../assets/images/clothing-store.jpeg';
 import brandicons from '@assets/brandicons';
 import Card from '../components/shopify/Card.astro';
+import Content from 'components/shopify/Content.astro';
 
 const packageOne = [
   'Ideal for small, expanding businesses',
@@ -27,7 +28,7 @@ const packageThree = [
   description="Ben Sparrow provides professional Shopify theme development to merchants looking to deliver the best ecommerce experience to their customers."
   bgText="e-commerce"
 >
-  <section class="container-lg mx-auto mb-64">
+  <section class="container-lg mx-auto mb-32 lg:mb-64">
     <h1 class="relative z-10 drop-shadow-2xl">Shopify Theme Builds.</h1>
     <div class="flex items-center flex-col-reverse md:flex-row lg:items-end">
       <div class="flex-1 w-full">
@@ -57,7 +58,7 @@ const packageThree = [
     </div>
   </section>
   <!-- <span>enter shopify logo here</span> -->
-  <section class="mx-auto h-[100vh]">
+  <section class="mx-auto mb-32 lg:mb-64">
     <div class="inline-block w-full text-center mx-auto mb-16">
       <h3 class="mb-0">Theme Builds.</h3>
       <p>Services for brands of all sizes</p>
@@ -86,5 +87,9 @@ const packageThree = [
         list={packageThree}
       />
     </div>
+  </section>
+
+  <section class="container-lg">
+    <Content />
   </section>
 </Layout>

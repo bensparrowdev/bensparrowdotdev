@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import mobilePrototype from '@assets/images/mobile-prototype.png';
+---
+
+<div class="grid grid-flow-row gap-y-4 lg:grid-cols-12 w-full">
+  <div class="w-auto mx-auto row-start-2 lg:row-start-1 lg:col-span-6">
+    <div
+      class="w-full p-3 aspect-square rounded-lg border border-opacity-50 border-primary_dark bg-gradient-to-br from-transparent via-primary_dark/5 to-transparent"
+    >
+      <Image
+        src={mobilePrototype}
+        alt="three mobile prototypes of a pet themed shopify store"
+        width="500"
+        height="500"
+        class="object-contain bg-accent_dark h-full w-full rounded-md opacity-100"
+      />
+    </div>
+  </div>
+
+  <div
+    class="max-w-[500px] mx-auto lg:col-span-5 lg:col-start-8 flex flex-col items-start"
+  >
+    <small
+      class="font-ubuntu_mono text-base py-0 px-2 my-auto mb-4 rounded border-2 border-accent_dark"
+    >
+      some text
+    </small>
+    <h4 class="mb-4">The title text</h4>
+    <p>
+      Reprehenderit dolor ad ea consequat culpa nulla ex quis. Ex laborum sint
+      id duis id laboris consequat aliquip deserunt non dolor culpa fugiat
+      excepteur. Minim tempor sint dolor ea. Duis sunt eu laborum Lorem fugiat
+      exercitation ipsum anim in reprehenderit elit est eu. Officia fugiat culpa
+      enim aute Lorem commodo qui officia fugiat aliquip pariatur consequat
+      occaecat nulla. Qui aliquip aute mollit commodo amet fugiat. Irure eiusmod
+      reprehenderit ad amet quis non amet.
+    </p>
+  </div>
+</div>

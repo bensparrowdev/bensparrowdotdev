@@ -11,13 +11,14 @@ const { logo, timeEst, title, list, price } = Astro.props;
     <Fragment set:html={logo} />
     <small
       class="font-ubuntu_mono text-base py-0 px-2 my-auto rounded border-2 border-accent_dark"
-      >avg. {timeEst ? timeEst : '1'} month</small
     >
+      avg. {timeEst ? timeEst : '1'} month
+    </small>
   </div>
   <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
-    <h4 class="mb-3">{title ? title : 'Title'}</h4>
+    <h4 class="mb-4">{title ? title : 'Title'}</h4>
     <ul>
-      {list && list.map((text) => <li>{text}</li>)}
+      {list && list.map((text) => <li class="mb-2">{text}</li>)}
     </ul>
   </div>
   <div class="flex flex-col mb-5">
