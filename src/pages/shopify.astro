@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import clothingStore from '@assets/images/clothing-store.jpeg';
+import records from '@assets/images/records-for-sale.jpg';
 import brandicons from '@assets/brandicons';
 import { shopifyData } from '@data/content';
 
@@ -30,15 +30,14 @@ import ShopifyLogo from 'components/shopify/ShopifyLogo.astro';
       </div>
       <div class="flex-1 relative">
         <Image
-          src={clothingStore}
+          src={records}
           alt="inside of a clothes with tshirts hanging up, hoodies folded and bags on a shelf"
-          width="435"
-          height="435"
+          height="400"
           loading="eager"
           class="w-[435px] h-auto mb-8 aspect-square object-cover bottom-0 right-0 z-0 rounded-md shadow-2xl md:mb-0 lg:absolute lg:aspect-auto lg:h-[400px]"
         />
         <div
-          class="hidden lg:block lg:w-[435px] h-[400px] absolute bottom-0 right-0 rounded-md bg-gradient-to-tl from-transparent via-transparent to-secondary opacity-80 dark:to-secondary_dark"
+          class="hidden lg:block lg:w-[435px] h-[400px] absolute bottom-0 right-0 rounded-md bg-gradient-to-tl from-transparent via-transparent to-secondary opacity-20 dark:to-secondary_dark"
         >
         </div>
       </div>
