@@ -8,7 +8,11 @@ const { items } = await contentfulClient.getEntries<BlogPost>({
   content_type: 'blogPost',
 });
 
-const { posts = items } = Astro.props;
+// Sort blog posts by descending date
+const posts = items.sort(
+  (a, b) =>
+    new Date(a.sys.updatedAt).valueOf() - new Date(b.sys.updatedAt).valueOf()
+);
 ---
 
 <Layout

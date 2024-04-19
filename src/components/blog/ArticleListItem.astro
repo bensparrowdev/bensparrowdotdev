@@ -1,13 +1,15 @@
 ---
 const { title, tags, slug } = Astro.props.fields;
-const day = new Date(Astro.props.dateCreated).toLocaleDateString("en-gb", {
-  day: "numeric",
+const dateCreated = Astro.props.dateCreated;
+
+const day = new Date(dateCreated).toLocaleDateString('en-gb', {
+  day: 'numeric',
 });
-const month = new Date(Astro.props.dateCreated).toLocaleDateString("en-gb", {
-  month: "short",
+const month = new Date(dateCreated).toLocaleDateString('en-gb', {
+  month: 'short',
 });
-const year = new Date(Astro.props.dateCreated).toLocaleDateString("en-gb", {
-  year: "numeric",
+const year = new Date(dateCreated).toLocaleDateString('en-gb', {
+  year: 'numeric',
 });
 ---
 
@@ -18,7 +20,7 @@ const year = new Date(Astro.props.dateCreated).toLocaleDateString("en-gb", {
   <div class="col-span-8 sm:col-span-7">
     <h5 class="m-0">
       <a
-        class="text-primary hover:text-body dark:text-accent2_dark hover:dark:text-body_dark transition-[color] duration-150"
+        class="text-accent2 hover:text-body dark:text-accent2_dark hover:dark:text-body_dark transition-[color] duration-150"
         href={`/blog/${slug}`}>{title}</a
       >
     </h5>
