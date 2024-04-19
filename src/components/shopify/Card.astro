@@ -3,14 +3,14 @@ const { logo, timeEst, title, list, price } = Astro.props;
 ---
 
 <div
-  class={`price-card rounded-md py-7 px-5 flex flex-col dark:bg-primary_dark dark:text-accent_dark w-96 md:w-[500px] mx-auto lg:w-auto ${
+  class={`price-card rounded-md py-7 px-5 flex flex-col bg-accent text-body dark:bg-primary_dark dark:text-accent_dark  w-full max-w-md md:w-[500px] mx-auto lg:w-auto ${
     title === 'Custom Build' && 'is-best-seller'
   }`}
 >
   <div class="flex items-center justify-between h-16 mb-4">
     <Fragment set:html={logo} />
     <small
-      class="font-ubuntu_mono text-base py-0 px-2 my-auto rounded border-2 border-accent_dark"
+      class="font-ubuntu_mono text-base py-0 px-2 my-auto rounded border-2 border-primary dark:border-accent_dark"
     >
       avg. {timeEst ? timeEst : '1'} month
     </small>
@@ -18,7 +18,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
   <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
     <h4 class="mb-4">{title ? title : 'Title'}</h4>
     <ul>
-      {list && list.map((text) => <li class="mb-2">{text}</li>)}
+      {list && list.map((text) => <li class="mb-2 text-base">{text}</li>)}
     </ul>
   </div>
   <div class="flex flex-col mb-5">
@@ -53,15 +53,5 @@ const { logo, timeEst, title, list, price } = Astro.props;
   ul li::before {
     content: url(/checkmark.svg);
     @apply absolute top-1 left-0;
-  }
-
-  .is-best-seller {
-    @apply outline outline-4 outline-accent2_dark outline-offset-2 relative;
-  }
-
-  .is-best-seller::before {
-    content: 'best seller';
-    @apply absolute -top-5 left-1/2 transform -translate-x-1/2 bg-accent2_dark text-primary_dark font-ubuntu_mono px-3 py-0.5 rounded-full;
-    border-radius: ;
   }
 </style>

@@ -98,11 +98,11 @@ nav span {
 
 @layer components {
   .default-btn {
-    @apply py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-150 text-accent  bg-primary hover:text-body hover:bg-accent dark:text-accent_dark  dark:bg-primary_dark  dark:hover:text-body_dark  dark:hover:bg-accent_dark disabled:cursor-not-allowed;
+    @apply py-3 px-8 my-3 rounded border-none transition-all ease-linear duration-150 text-accent  bg-primary hover:text-secondary hover:bg-accent2 dark:text-accent_dark  dark:bg-primary_dark  dark:hover:text-body_dark  dark:hover:bg-accent_dark disabled:cursor-not-allowed;
   }
 
   .code-block-btn {
-    @apply py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 text-lg lowercase font-ubuntu_mono text-body bg-accent hover:text-primary hover:bg-accent2 dark:text-body_dark dark:bg-accent_dark dark:hover:text-primary_dark dark:hover:bg-accent2_dark;
+    @apply py-1 px-2 mx-0 my-1 rounded border-none transition-all ease-linear duration-150 text-lg lowercase font-ubuntu_mono text-body bg-accent hover:text-secondary hover:bg-accent2 dark:text-body_dark dark:bg-accent_dark dark:hover:text-primary_dark dark:hover:bg-accent2_dark;
   }
 }
 
@@ -330,4 +330,13 @@ aside > div::-webkit-scrollbar {
 
 .price-card .shopify-logo {
   @apply dark:fill-black;
+}
+
+.is-best-seller {
+  @apply outline outline-4 outline-[#8DB849] outline-offset-2 relative;
+}
+
+.is-best-seller::before {
+  content: 'best seller';
+  @apply absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#8DB849] text-white font-ubuntu_mono px-3 py-0.5 rounded-full;
 }

@@ -5,8 +5,9 @@ import clothingStore from '@assets/images/clothing-store.jpeg';
 import brandicons from '@assets/brandicons';
 import { shopifyData } from '@data/content';
 
-import Card from '../components/shopify/Card.astro';
+import Card from 'components/shopify/Card.astro';
 import Content from 'components/shopify/Content.astro';
+import ShopifyLogo from 'components/shopify/ShopifyLogo.astro';
 ---
 
 <Layout
@@ -18,7 +19,7 @@ import Content from 'components/shopify/Content.astro';
     <h1 class="relative z-10 drop-shadow-2xl">Shopify Theme Builds.</h1>
     <div class="flex items-center flex-col-reverse md:flex-row lg:items-end">
       <div class="flex-1 w-full">
-        <p class="">
+        <p>
           A customised Shopify Theme designed to enhance conversion rates,
           performance, and optimisation, while also improving Lifetime Value
           (LTV) and Average Order Value (AOV). Crafted with strategic
@@ -43,8 +44,10 @@ import Content from 'components/shopify/Content.astro';
       </div>
     </div>
   </section>
-  <!-- <span>enter shopify logo here</span> -->
-  <section class="mx-auto mb-32 lg:mb-64">
+
+  <ShopifyLogo elPosition="right" />
+
+  <section class="mx-auto mb-32 lg:mb-72">
     <div class="inline-block w-full text-center mx-auto mb-16">
       <h3 class="mb-0">Theme Builds.</h3>
       <p>Services for brands of all sizes</p>
@@ -65,6 +68,8 @@ import Content from 'components/shopify/Content.astro';
       }
     </div>
   </section>
+
+  <ShopifyLogo elPosition="left" />
 
   <section class="container-lg">
     {

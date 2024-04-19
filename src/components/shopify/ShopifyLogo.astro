@@ -1,0 +1,49 @@
+---
+import brandicons from '@assets/brandicons';
+
+const { elPosition } = Astro.props;
+---
+
+<div class="max-w-7xl mx-auto relative hidden-element">
+  <span
+    class={`absolute transition-all duration-500 ${
+      elPosition === 'left'
+        ? 'left-0 -translate-x-64 rotate-12 bottom-16 lg:bottom-24'
+        : 'right-0 translate-x-64 -rotate-12 bottom-10'
+    }`}
+    set:html={brandicons.shopifyBag}
+  />
+</div>
+
+<style>
+  .hidden-element span {
+    @apply opacity-0;
+  }
+
+  .visible-element span {
+    @apply opacity-100 translate-x-0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          console.log(entries);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible-element');
+            entry.target.classList.remove('hidden-element');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    document.querySelectorAll('.hidden-element').forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>
