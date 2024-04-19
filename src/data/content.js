@@ -6,29 +6,29 @@ export const shopifyData = {
   price_cards: [
     {
       logo: brandicons.shopify,
-      timeEst: 1,
+      timeEst: '1',
       title: 'Basic Build',
       list: [
         'Ideal for small, expanding businesses',
         'Fast-track to market',
         'Cost-effective for limited budgets',
       ],
-      price: '5000',
+      price: '4,340',
     },
     {
       logo: brandicons.shopify,
-      timeEst: 3,
+      timeEst: '2-3',
       title: 'Custom Build',
       list: [
         'Tailored for established brands seeking unique features',
         'Bespoke design and functionality',
         'Enhanced UX and integration capabilities',
       ],
-      price: '15,000',
+      price: '8,680',
     },
     {
       logo: brandicons.react,
-      timeEst: 3,
+      timeEst: '1-3',
       title: 'Headless Store',
       list: [
         'Best for brands prioritising scalability and performance',

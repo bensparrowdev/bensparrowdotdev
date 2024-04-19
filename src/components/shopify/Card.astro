@@ -12,7 +12,8 @@ const { logo, timeEst, title, list, price } = Astro.props;
     <small
       class="font-ubuntu_mono text-base py-0 px-2 my-auto rounded border-2 border-primary dark:border-accent_dark"
     >
-      avg. {timeEst ? timeEst : '1'} month
+      avg. {timeEst ? timeEst : '1'}
+      {timeEst !== '1' ? 'months' : 'month'}
     </small>
   </div>
   <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
@@ -21,17 +22,18 @@ const { logo, timeEst, title, list, price } = Astro.props;
       {list && list.map((text) => <li class="mb-2 text-base">{text}</li>)}
     </ul>
   </div>
-  <div class="flex flex-col mb-5">
+  <div class="flex flex-col mb-2">
     {
       price ? (
         <>
           <span class="text-2xl">
+            <small class="text-sm">from</small>
             <strong>£{price ? price : '0'}</strong> +VAT*
           </span>
           <small class="text-sm">VAT at standard (UK)</small>
         </>
       ) : (
-        <span class="text-2xl">Price on application</span>
+        <strong class="text-2xl">Price on application</strong>
       )
     }
   </div>

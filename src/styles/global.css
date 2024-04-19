@@ -337,6 +337,6 @@ aside > div::-webkit-scrollbar {
 }
 
 .is-best-seller::before {
-  content: 'best seller';
+  content: 'most popular';
   @apply absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#8DB849] text-white font-ubuntu_mono px-3 py-0.5 rounded-full;
 }
