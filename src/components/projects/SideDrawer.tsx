@@ -80,7 +80,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
           )}
         </div>
         <a href={project.link} target="_blank">
-          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md bg-accent dark:bg-accent_dark drop-shadow-xl">
+          <div className="fixed bottom-0 right-0 font-bold px-6 py-4 rounded-tl-md bg-accent hover:outline outline-2 outline-accent2 dark:outline-accent2_dark dark:bg-accent_dark drop-shadow-xl">
             Open Project
           </div>
         </a>
