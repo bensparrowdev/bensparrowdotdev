@@ -44,7 +44,7 @@ export const shopifyData = {
       imageAlt: 'mobile prototype of shopify store',
       pretitle: 'conversion optimised',
       title: 'Shopify development that’s optimised for results.',
-      body: '<p>Once we design your online store, our team of accredited Shopify experts will begin crafting a custom, bespoke theme tailored for conversion. We adhere to industry best practices to ensure your store is fully optimised for all devices and browsers, enhancing user experience and boosting your visibility in search engine rankings.</p><p>The result? More visitors, more conversions, and a superior online presence.</p>',
+      body: '<p>Once a design has been established, I will begin crafting a custom, bespoke theme tailored for conversion. As an accredited Shopify expert, I adhere to industry best practices to ensure your store is fully optimised for all devices and browsers, enhancing user experience and boosting your visibility in search engine rankings.</p><p>The result? More visitors, more conversions, and a superior online presence.</p>',
       invert: false,
     },
     {
@@ -52,7 +52,7 @@ export const shopifyData = {
       imageAlt: 'mobile prototype of shopify store',
       pretitle: 'long-term growth & support',
       title: 'Sustained Growth Beyond Initial Development.',
-      body: '<p>Our services extend well beyond initial custom theme development. Following the successful development and launch of your online store, we provide an ongoing optimisation and support retainer. This offering promotes sustained growth and flexibility to our merchants. This enables you to continuously improve, respond to customer feedback, and enjoy comprehensive support from our team of experts.</p>',
+      body: '<p>My services extend well beyond initial custom theme development. Following the successful development and launch of your online store, I offer an ongoing optimisation and support retainer. This service promotes sustained growth and flexibility for you as a merchant. This enables you to continuously improve, respond to customer feedback, and enjoy comprehensive support from your personal experienced Shopify expert.</p>',
       invert: true,
     },
   ],
