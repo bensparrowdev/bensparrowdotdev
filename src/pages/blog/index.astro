@@ -1,10 +1,10 @@
 ---
-import { contentfulClient, type BlogPost } from '../../lib/contentful';
+import { client, type BlogPostSkeleton } from '../../lib/contentful';
 import Layout from '../../layouts/Layout.astro';
 import ArticleListItem from '../../components/blog/ArticleListItem.astro';
 
 // Blog post data
-const { items } = await contentfulClient.getEntries<BlogPost>({
+const { items } = await client.getEntries<BlogPostSkeleton>({
   content_type: 'blogPost',
 });
 

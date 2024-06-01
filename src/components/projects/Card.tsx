@@ -13,6 +13,10 @@ export default function Card({
     heights = ['sm:h-[300px]', 'sm:h-[325px]', 'sm:h-[375px]'],
     heightClass = heights[index % heights.length];
 
+  if (!project) {
+    return <div>loading</div>;
+  }
+
   return (
     <motion.div
       animate={{ opacity: 100 }}

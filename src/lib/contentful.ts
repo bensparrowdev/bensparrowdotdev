@@ -1,39 +1,29 @@
 import contentful from 'contentful';
 
-export interface Project {
-  contentTypeId: string;
+export interface ProjectSkeleton {
+  contentTypeId: 'projects';
   fields: {
-    title: string;
-    description: string;
-    tags: string[];
-    image: {
-      fields: {
-        description: string;
-        url: string;
-      };
-    };
+    title: contentful.EntryFieldTypes.Text;
+    description: contentful.EntryFieldTypes.Text;
+    tags: contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>;
+    image: contentful.EntryFieldTypes.AssetLink;
   };
 }
 
-export interface BlogPost {
-  contentTypeId: string;
+export interface BlogPostSkeleton {
+  contentTypeId: 'blogPost';
   fields: {
-    title: string;
-    tags: string[];
-    dateCreated: Date;
-    readTime: number;
-    blogContent: string;
-    slug: string;
-    featuredImage: {
-      fields: {
-        description: string;
-        url: string;
-      };
-    };
+    title: contentful.EntryFieldTypes.Text;
+    tags: contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.Symbol>;
+    dateCreated: contentful.EntryFieldTypes.Date;
+    readTime: contentful.EntryFieldTypes.Number;
+    blogContent: contentful.EntryFieldTypes.Text;
+    slug: contentful.EntryFieldTypes.Text;
+    featuredImage: contentful.EntryFieldTypes.AssetLink;
   };
 }
 
-export const contentfulClient = contentful.createClient({
+export const client = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.DEV
     ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN

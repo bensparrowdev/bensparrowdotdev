@@ -1,21 +1,14 @@
+import type { ProjectSkeleton } from 'lib/contentful';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Tabs from './Tabs';
 import Card from './Card';
 import SideDrawer from './SideDrawer';
 
-type ProjectData = {
-  techStack: string[];
-  tags: string[];
-};
-
 export default function ProjectsSection({ projects }) {
   const [currentTab, setCurrentTab] = useState<string>('all');
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const [projectData, setProjectData] = useState<ProjectData>({
-    techStack: ['null'],
-    tags: ['null'],
-  });
+  const [projectData, setProjectData] = useState<ProjectSkeleton>();
 
   const renderCards = (data) => {
     let filteredData = [];

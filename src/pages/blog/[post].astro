@@ -1,14 +1,15 @@
 ---
-import { contentfulClient, type BlogPost } from '../../lib/contentful';
+import { client, type BlogPostSkeleton } from '../../lib/contentful';
 import { marked } from 'marked';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import brandicons from '@assets/brandicons';
 
 export async function getStaticPaths() {
-  const { items } = await contentfulClient.getEntries<BlogPost>({
-    content_type: 'blogPost',
-  });
+  const { items } =
+    await client.withoutUnresolvableLinks.getEntries<BlogPostSkeleton>({
+      content_type: 'blogPost',
+    });
 
   const pages = items.map((item) => {
     const { title, tags, featuredImage, readTime, slug, blogContent } =
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
         slug,
         readTime,
         featuredImage,
-        content: marked.parse(blogContent),
+        blogContent: marked.parse(blogContent),
         date: new Date(item.sys.updatedAt).toLocaleDateString('en-gb', {
           year: 'numeric',
           month: 'long',
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
   return pages;
 }
 
-const { title, tags, readTime, content, date, featuredImage } = Astro.props;
+const { title, tags, readTime, blogContent, date, featuredImage } = Astro.props;
 ---
 
 <Layout
@@ -73,7 +74,7 @@ const { title, tags, readTime, content, date, featuredImage } = Astro.props;
         }
       </div>
 
-      <article set:html={content} />
+      <article set:html={blogContent} />
 
       <div class="flex gap-3 mt-8 social-icons">
         <p class="mb-0">Follow me on:</p>
