@@ -40,13 +40,13 @@ export default function ProjectsSection({ projects }) {
         animate={{ y: 0 }}
         initial={{ y: 50 }}
         transition={{ duration: 0.5, type: 'spring' }}
-        className="columns-1 sm:columns-2 gap-6 overflow-hidden"
+        className="columns-1 sm:columns-2 gap-6"
       >
         {!loadedProjects ? (
-          <>
-            <div className="rounded-md relative h-80 flex bg-accent dark:bg-accent_dark animate-pulse"></div>
-            <div className="rounded-md relative h-80 flex bg-accent dark:bg-accent_dark animate-pulse"></div>
-          </>
+          <div className="-translate-y-[50px]">
+            <div className="rounded-md relative h-80 mb-6 bg-accent dark:bg-accent_dark animate-pulse"></div>
+            <div className="rounded-md relative h-80 mb-6 bg-accent dark:bg-accent_dark animate-pulse"></div>
+          </div>
         ) : (
           renderCards(loadedProjects).map((proj, i) => {
             return (
