@@ -3,7 +3,6 @@ import { client, type BlogPostSkeleton } from '../../lib/contentful';
 import Layout from '../../layouts/Layout.astro';
 import ArticleListItem from '../../components/blog/ArticleListItem.astro';
 
-// Blog post data
 const { items } = await client.getEntries<BlogPostSkeleton>({
   content_type: 'blogPost',
 });
@@ -25,8 +24,7 @@ const posts = items.sort(
     <div class="container mb-16">
       <p>
         On this page, discover my irregular and occasional blog posts on web
-        development, technology, freelancing and other things I feel are
-        important to write about.
+        development, technology, freelancing and other trivial things.
       </p>
     </div>
     <div class="container-md">

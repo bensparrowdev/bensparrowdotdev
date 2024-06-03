@@ -11,7 +11,7 @@ export async function getStaticPaths() {
       content_type: 'blogPost',
     });
 
-  const pages = items.map((item) => {
+  return items.map((item) => {
     const { title, tags, featuredImage, readTime, slug, blogContent } =
       item.fields;
 
@@ -32,8 +32,6 @@ export async function getStaticPaths() {
       },
     };
   });
-
-  return pages;
 }
 
 const { title, tags, readTime, blogContent, date, featuredImage } = Astro.props;
@@ -49,18 +47,14 @@ const { title, tags, readTime, blogContent, date, featuredImage } = Astro.props;
       {title}.
     </h1>
     <div class="container-md">
-      {
-        featuredImage && (
-          <Image
-            src={featuredImage.fields.file.url + '?w=800&fm=webp'}
-            alt={featuredImage.fields.description}
-            width={1024}
-            height={330}
-            loading="eager"
-            class="w-full max-h-[33rem] object-contain object-center mb-4"
-          />
-        )
-      }
+      <Image
+        src={featuredImage.fields.file.url + '?w=800&fm=webp'}
+        alt={featuredImage.fields.description}
+        width={1024}
+        height={330}
+        loading="eager"
+        class="w-full max-h-[33rem] object-contain object-center mb-4"
+      />
       <time>{date}</time> - <span
         >{`${readTime} ${readTime > 1 ? 'mins' : 'min'} read`}</span
       >
