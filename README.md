@@ -1,3 +1,3 @@
-## 2024 Portfolio
+## Personal & Professional Portfolio
 
 [bensparrowdev](https://bensparrow.dev)

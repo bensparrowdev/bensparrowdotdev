@@ -20,4 +20,5 @@ export default defineConfig({
   server: {
     host: true,
   },
+  prefetch: true,
 });

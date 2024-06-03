@@ -6,7 +6,11 @@ import brandicons from '@assets/brandicons';
 <header class="py-6 sm:py-12 mb-12 md:mb-20">
   <div class="flex items-center justify-between select-none">
     <div>
-      <a href="/" class="cursor-pointer" aria-label="Go to the homepage"
+      <a
+        href="/"
+        class="cursor-pointer"
+        aria-label="Go to the homepage"
+        data-astro-prefetch
         ><h4 class="font-eb_Garamond sm:text-5xl">bensparrowdev.</h4></a
       >
     </div>
@@ -39,35 +43,35 @@ import brandicons from '@assets/brandicons';
         <ThemeSwitch />
       </div>
       <div>
-        <a class="border-none" href="/projects">
+        <a class="border-none" href="/projects" data-astro-prefetch>
           <h3
             class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
           >
             Projects
           </h3>
         </a>
-        <a class="border-none" href="/blog">
+        <a class="border-none" href="/blog" data-astro-prefetch>
           <h3
             class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
           >
             Blog
           </h3>
         </a>
-        <a class="border-none" href="/shopify">
+        <a class="border-none" href="/shopify" data-astro-prefetch>
           <h3
             class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
           >
             Shopify
           </h3>
         </a>
-        <a class="border-none" href="/about">
+        <a class="border-none" href="/about" data-astro-prefetch>
           <h3
             class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
           >
             About
           </h3>
         </a>
-        <a class="border-none" href="/contact">
+        <a class="border-none" href="/contact" data-astro-prefetch>
           <h3
             class="text-body hover:text-primary dark:text-body_dark dark:hover:text-primary_dark sm:text-6xl sm:mb-6"
           >
@@ -120,7 +124,7 @@ import brandicons from '@assets/brandicons';
           </a>
         </div>
         <div class="mt-3 leading-normal">
-          view <a href="/privacy">privacy policy</a>
+          view <a href="/privacy" data-astro-prefetch>privacy policy</a>
         </div>
       </div>
     </div>
