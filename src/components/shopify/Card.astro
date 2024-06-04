@@ -19,7 +19,14 @@ const { logo, timeEst, title, list, price } = Astro.props;
   <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
     <h4 class="mb-4">{title ? title : 'Title'}</h4>
     <ul>
-      {list && list.map((text) => <li class="mb-2 text-base">{text}</li>)}
+      {
+        list &&
+          list.map((text) => (
+            <li class="mb-2 text-base text-body dark:text-accent_dark">
+              {text}
+            </li>
+          ))
+      }
     </ul>
   </div>
   <div class="flex flex-col mb-2">

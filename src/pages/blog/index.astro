@@ -10,7 +10,7 @@ const { items } = await client.getEntries<BlogPostSkeleton>({
 // Sort blog posts by descending date
 const posts = items.sort(
   (a, b) =>
-    new Date(a.sys.updatedAt).valueOf() - new Date(b.sys.updatedAt).valueOf()
+    new Date(b.sys.createdAt).valueOf() - new Date(a.sys.createdAt).valueOf()
 );
 ---
 

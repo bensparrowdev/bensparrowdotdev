@@ -73,6 +73,11 @@ h6 {
   @apply font-semibold leading-normal;
 }
 
+ul,
+li {
+  @apply text-lg font-normal leading-8 text-body dark:text-body_dark;
+}
+
 button {
   @apply selection:bg-opacity-0 focus-visible:outline-body dark:focus-visible:outline-secondary_dark;
 }
@@ -278,6 +283,12 @@ article img {
 }
 article iframe {
   @apply mx-auto my-6;
+}
+article ul {
+  @apply mb-4;
+}
+article ul li {
+  @apply list-inside list-[circle] mb-2;
 }
 
 /* 
