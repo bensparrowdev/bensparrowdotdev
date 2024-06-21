@@ -39,6 +39,16 @@ module.exports = {
         ubuntu_mono: ['Ubuntu Mono', 'monospace'],
       },
       colors,
+      keyframes: {
+        fadeInSlideUp: {
+          '0%': { transform: 'translateY(70px)', opacity: '0' },
+          '60%': { transform: 'translateY(-10px)' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        fadeInSlideUp: 'fadeInSlideUp .5s ease-in 1',
+      },
     },
   },
   plugins: [],

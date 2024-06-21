@@ -1,6 +1,5 @@
 import type { ProjectSkeleton } from 'lib/contentful';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import Tabs from './Tabs';
 import Card from './Card';
 import SideDrawer from './SideDrawer';
@@ -36,14 +35,9 @@ export default function ProjectsSection({ projects }) {
   return (
     <>
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
-      <motion.div
-        animate={{ y: 0 }}
-        initial={{ y: 50 }}
-        transition={{ duration: 0.5, type: 'spring' }}
-        className="columns-1 sm:columns-2 gap-6"
-      >
+      <div className="columns-1 sm:columns-2 gap-6">
         {!loadedProjects ? (
-          <div className="-translate-y-[50px]">
+          <div>
             <div className="rounded-md relative h-80 mb-6 bg-accent dark:bg-accent_dark animate-pulse"></div>
             <div className="rounded-md relative h-80 mb-6 bg-accent dark:bg-accent_dark animate-pulse"></div>
           </div>
@@ -61,7 +55,7 @@ export default function ProjectsSection({ projects }) {
             );
           })
         )}
-      </motion.div>
+      </div>
       <SideDrawer
         drawerOpen={drawerOpen}
         setDrawerOpen={setDrawerOpen}
