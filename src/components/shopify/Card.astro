@@ -35,9 +35,8 @@ const { logo, timeEst, title, list, price } = Astro.props;
         <>
           <span class="text-2xl">
             <small class="text-sm">from</small>
-            <strong>£{price ? price : '0'}</strong> +VAT*
+            <strong>£{price ? price : '0'}</strong>*
           </span>
-          <small class="text-sm">VAT at standard (UK)</small>
         </>
       ) : (
         <strong class="text-2xl">Price on application</strong>

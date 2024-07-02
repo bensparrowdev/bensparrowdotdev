@@ -28,7 +28,7 @@ export const shopifyData = {
     },
     {
       logo: brandicons.react,
-      timeEst: '1-3',
+      timeEst: '2-3',
       title: 'Headless Store',
       list: [
         'Best for brands prioritising scalability and performance',

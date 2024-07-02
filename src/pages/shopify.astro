@@ -45,13 +45,13 @@ import ShopifyLogo from 'components/shopify/ShopifyLogo.astro';
 
   <ShopifyLogo elPosition="right" />
 
-  <section class="mx-auto mb-32 lg:mb-72">
+  <section class="mx-auto mb-44 lg:mb-72">
     <div class="inline-block w-full text-center mx-auto mb-16">
       <h3 class="mb-0">Theme Builds.</h3>
       <p>Services for brands of all sizes</p>
     </div>
     <div
-      class="grid grid-rows-auto grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-12 max-w-7xl mx-auto"
+      class="grid grid-rows-auto grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-x-12 max-w-7xl mx-auto"
     >
       {
         shopifyData.price_cards.map((data) => (
@@ -64,6 +64,11 @@ import ShopifyLogo from 'components/shopify/ShopifyLogo.astro';
           />
         ))
       }
+      <small class="lg:col-span-3 mt-4 text-sm"
+        >*Prices shown are for reference. Final costs may vary based on project
+        requirements. Please get in touch to discuss your specific needs and
+        receive a customised quote.</small
+      >
     </div>
   </section>
 
