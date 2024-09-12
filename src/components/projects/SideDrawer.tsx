@@ -56,7 +56,7 @@ const DrawerContent = ({ drawerOpen, setDrawerOpen, project }) => {
         </div>
       </div>
 
-      <div className="h-full w-full overflow-auto pt-20 pb-8">
+      <div className="h-full w-full overflow-auto pt-20 pb-14">
         <img
           src={`${image.file.url}?w=570`}
           alt={image.description}
@@ -75,7 +75,7 @@ const DrawerContent = ({ drawerOpen, setDrawerOpen, project }) => {
         <div className="flex flex-wrap gap-2 mb-6">
           {project.techStack.map((tech, i) => {
             return (
-              <span key={i} className="code-block-btn">
+              <span key={i} className="code-block-btn cursor-se-resize">
                 {tech}
               </span>
             );
