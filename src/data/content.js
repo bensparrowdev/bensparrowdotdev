@@ -6,14 +6,14 @@ export const shopifyData = {
   price_cards: [
     {
       logo: brandicons.shopify,
-      timeEst: '1',
+      timeEst: '1-2',
       title: 'Basic Build',
       list: [
         'Ideal for small, expanding businesses',
         'Fast-track to market',
         'Cost-effective for limited budgets',
       ],
-      price: '4,340',
+      price: '6,144',
     },
     {
       logo: brandicons.shopify,
@@ -24,7 +24,7 @@ export const shopifyData = {
         'Bespoke design and functionality',
         'Enhanced UX and integration capabilities',
       ],
-      price: '8,680',
+      price: '10,240',
     },
     {
       logo: brandicons.react,
