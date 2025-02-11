@@ -5,7 +5,7 @@ export default function Card({
   setProjectData,
   index,
 }) {
-  const image = project.image.fields;
+  const video = project.image.fields;
   const title = project.title;
   const subheading = project.subheading;
   const heights = ['sm:h-[300px]', 'sm:h-[325px]', 'sm:h-[375px]'];
@@ -19,11 +19,17 @@ export default function Card({
         setProjectData(project);
       }}
     >
-      <img
-        src={`${image.file.url}?w=570`}
-        alt={image.description}
-        className="absolute left-0 top-0 object-cover w-full h-full rounded-md -z-10"
-      />
+      {video && (
+        <video
+          className="absolute left-0 top-0 object-cover w-full h-full rounded-md -z-10"
+          src={video.file.url}
+          autoPlay
+          muted
+          loop
+          aria-label={video.title || title}
+          aria-details={video.description || subheading}
+        />
+      )}
       <div className="text-primary_dark relative z-10 sm:opacity-0 group-hover:-translate-y-4 group-hover:opacity-100 transition-all duration-150 ease-in">
         <h5 className="mb-2">{title}</h5>
         <span className="text-body_dark">{subheading}</span>

@@ -27,7 +27,7 @@ export default function SideDrawer({ drawerOpen, setDrawerOpen, project }) {
 }
 
 const DrawerContent = ({ drawerOpen, setDrawerOpen, project }) => {
-  const image = project?.image.fields || '';
+  const video = project?.image.fields;
   const document = project?.description;
 
   if (!project) {
@@ -57,11 +57,17 @@ const DrawerContent = ({ drawerOpen, setDrawerOpen, project }) => {
       </div>
 
       <div className="h-full w-full overflow-auto pt-20 pb-14">
-        <img
-          src={`${image.file.url}?w=570`}
-          alt={image.description}
-          className="mb-6 rounded-md"
-        />
+        {video && (
+          <video
+            className="mb-6 rounded-md"
+            src={video.file.url}
+            autoPlay
+            muted
+            loop
+            aria-label={video.title || project.title}
+            aria-details={video.description || project.subheading}
+          />
+        )}
         <h3 className="mb-0">{project.title}</h3>
         <p className="mb-6">{project.subheading}</p>
         <h6 className="capitalize mb-2">about</h6>
