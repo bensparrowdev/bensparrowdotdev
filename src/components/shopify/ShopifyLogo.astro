@@ -30,7 +30,6 @@ const { elPosition } = Astro.props;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(entries);
           if (entry.isIntersecting) {
             entry.target.classList.add('visible-element');
             entry.target.classList.remove('hidden-element');
