@@ -13,7 +13,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
       class="font-ubuntu_mono text-base py-0 px-2 my-auto rounded border-2 border-primary dark:border-accent_dark"
     >
       avg. {timeEst ? timeEst : '1'}
-      {timeEst !== '1' ? 'months' : 'month'}
+      {timeEst !== '1' ? 'weeks' : 'week'}
     </small>
   </div>
   <div class="lg:flex-1 pb-5 mb-5 border-b dark:border-accent2_dark">
@@ -22,7 +22,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
       {
         list &&
           list.map((text) => (
-            <li class="mb-2 text-base text-body dark:text-accent_dark">
+            <li class="mb-3 text-base text-body dark:text-accent_dark">
               {text}
             </li>
           ))
