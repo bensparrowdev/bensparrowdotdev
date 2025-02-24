@@ -59,4 +59,17 @@ import brandicons from '@assets/brandicons';
       </a>
     </div>
   </div>
+  <a href="/shopify" class="shopify-bag__floating">
+    <span class="sr-only">Shopify page</span>
+    <span set:html={brandicons.shopifyBag} />
+  </a>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const floatingBag = document.querySelector('.shopify-bag__floating');
+    if (floatingBag) {
+      floatingBag.classList.add('visible');
+    }
+  });
+</script>

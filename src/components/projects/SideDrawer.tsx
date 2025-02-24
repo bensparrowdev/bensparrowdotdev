@@ -64,6 +64,7 @@ const DrawerContent = ({ drawerOpen, setDrawerOpen, project }) => {
             autoPlay
             muted
             loop
+            playsInline
             aria-label={video.title || project.title}
             aria-details={video.description || project.subheading}
           />

@@ -3,7 +3,7 @@ const { logo, timeEst, title, list, price } = Astro.props;
 ---
 
 <div
-  class={`price-card rounded-md py-7 px-5 flex flex-col bg-accent text-body dark:bg-primary_dark dark:text-accent_dark  w-full max-w-md md:w-[500px] mx-auto lg:w-auto ${
+  class={`price-card rounded-md py-7 px-5 flex flex-col bg-accent text-body dark:bg-primary_dark dark:text-accent_dark w-full max-w-md mx-auto animate--slide-up ${
     title === 'Custom Build' && 'is-best-seller'
   }`}
 >

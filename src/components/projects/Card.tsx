@@ -1,3 +1,5 @@
+import { useRef, useEffect } from 'react';
+
 export default function Card({
   project,
   drawerOpen,
@@ -5,11 +7,19 @@ export default function Card({
   setProjectData,
   index,
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const video = project.image.fields;
   const title = project.title;
   const subheading = project.subheading;
   const heights = ['sm:h-[300px]', 'sm:h-[325px]', 'sm:h-[375px]'];
   const heightClass = heights[index % heights.length];
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.75;
+    }
+  }, []);
 
   return (
     <div
@@ -21,11 +31,13 @@ export default function Card({
     >
       {video && (
         <video
+          ref={videoRef}
           className="absolute left-0 top-0 object-cover w-full h-full rounded-md -z-10"
           src={video.file.url}
           autoPlay
           muted
           loop
+          playsInline
           aria-label={video.title || title}
           aria-details={video.description || subheading}
         />

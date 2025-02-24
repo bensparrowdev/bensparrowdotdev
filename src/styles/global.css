@@ -87,6 +87,14 @@ nav span {
   @apply border-b-[1px] border-invisible hover:border-secondary_dark dark:hover:border-secondary dark:hover:text-secondary transition-[border] duration-150 ease-in text-2xl font-light;
 }
 
+.animate--slide-up {
+  @apply opacity-0 translate-y-16 transition-[opacity,transform] duration-500 ease-out;
+}
+
+.animate--slide-up.animated {
+  @apply opacity-100 translate-y-0;
+}
+
 /* 
 *** CUSTOM CLASSES 
 */
@@ -350,4 +358,21 @@ aside > div::-webkit-scrollbar {
 .is-best-seller::before {
   content: 'most popular';
   @apply absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#8DB849] text-white font-ubuntu_mono px-3 py-0.5 rounded-full;
+}
+
+.shopify-bag__floating {
+  @apply hidden lg:block fixed bottom-8 -right-full rounded-full h-16 w-16 bg-accent dark:bg-accent_dark;
+  transition: right 0.4s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.shopify-bag__floating:hover {
+  @apply bg-primary dark:bg-primary_dark;
+}
+
+.shopify-bag__floating.visible {
+  @apply right-4;
+}
+
+.shopify-bag__floating svg {
+  @apply scale-[0.4] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
