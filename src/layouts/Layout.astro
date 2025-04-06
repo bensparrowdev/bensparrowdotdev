@@ -55,4 +55,10 @@ const {
       observer.observe(element);
     });
   });
+
+  // Ackee Analytics Tracking
+  import * as ackeeTracker from 'ackee-tracker';
+  ackeeTracker
+    .create('https://ackee-analytics.netlify.app')
+    .record('9347f1cd-8fe9-4c02-8f6a-cabb23d980f2');
 </script>
