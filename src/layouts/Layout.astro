@@ -7,12 +7,13 @@ const {
   title = 'bensparrowdev Portfolio',
   description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.",
   bgText = 'web developer',
+  projects,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <MainHead {title} {description} />
+  <MainHead {title} {description} {projects} />
   <body>
     <CookieBanner />
     <!-- Google Tag Manager (noscript) -->

@@ -1,0 +1,83 @@
+---
+const { origin } = Astro.site;
+const pageURL = Astro.url.pathname;
+const { projects } = Astro.props;
+let schemaType;
+
+if (pageURL === '/projects') schemaType = 'projects';
+else if (pageURL === '/blog') schemaType = 'blog';
+else if (pageURL === '/contact') schemaType = 'contact';
+
+const baseGraph = [
+  {
+    "@id": `${origin}/#person`,
+    "@type": "Person",
+    "name": "Ben Sparrow",
+    "jobTitle": "Freelance Web Developer",
+    "url": `${origin}/`,
+    "sameAs": [
+      "https://github.com/bensparrowdev",
+      "https://www.linkedin.com/in/ben-sparrow"
+    ]
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${origin}/#website`,
+    "url": `${origin}/`,
+    "name": "Ben Sparrow Portfolio",
+    "author": { "@id": `${origin}/#person` }
+  }
+];
+
+if (schemaType === 'projects') {
+  const projectGraph = projects.map(({ fields, sys }) => {
+    const description = fields.description.content[0].content[0].value ?? '';
+    return {
+      "@type": "CreativeWork",
+      "@id": `${origin}/projects/#${fields.title.toLowerCase().replaceAll(' ', '-')}`,
+      "name": fields.title,
+      "description": description,
+      "dateCreated": sys.createdAt.split('T')[0],
+      "keywords": fields.techStack
+    }
+  });
+
+  const hasPart = projectGraph.map(p => ({
+    "@type": "CreativeWork",
+    "@id": p["@id"],
+    "name": p.name
+  }));
+
+  baseGraph.push(
+    {
+      "@type": "WebPage",
+      "@id": "https://bensparrow.dev/projects#webpage",
+      "url": "https://bensparrow.dev/projects",
+      "name": "Projects – Ben Sparrow Portfolio",
+      "description": "A selection of web development projects by Ben Sparrow, specialising in Shopify themes and custom builds.",
+      "isPartOf": { "@id": "https://bensparrow.dev/#website" },
+      "about": { "@id": "https://bensparrow.dev/#person" }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://bensparrow.dev/projects#collection",
+      "name": "Web Development Projects",
+      "url": "https://bensparrow.dev/projects",
+      "isPartOf": { "@id": "https://bensparrow.dev/#website" },
+      "hasPart": hasPart
+    },
+    ...projectGraph
+  );
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": baseGraph
+};
+---
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(jsonLd)}
+/>

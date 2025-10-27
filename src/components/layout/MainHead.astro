@@ -1,14 +1,17 @@
 ---
 import '../../styles/global.css';
+import StructuredData from './StructuredData.astro';
 
 interface Props {
   title: string;
   description: string;
+  projects: any[];
 }
 
 const {
   title = 'bensparrowdev Portfolio',
   description = "Hi, I'm Ben Sparrow and welcome to my portfolio website.",
+  projects,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -22,6 +25,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
+
+  <StructuredData {projects} />
 </head>
 
 <script>
