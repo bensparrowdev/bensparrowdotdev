@@ -330,19 +330,6 @@ aside > div::-webkit-scrollbar {
   @apply fill-primary dark:fill-primary_dark;
 }
 
-.playlist-list ul h4:hover svg {
-  @apply ml-0 opacity-100;
-}
-
-.playlist-list ul svg {
-  @apply inline-block scale-75 align-middle -ml-6 opacity-0 transition-all ease-in-out duration-150 group-hover:ml-1 group-hover:opacity-100;
-}
-
-.playlist-list ul li::before {
-  content: '';
-  @apply block w-6 h-6 absolute left-0 mt-3 border-4 rounded-full;
-}
-
 .shopify-logo {
   @apply dark:fill-white;
 }

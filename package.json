@@ -10,15 +10,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.7.0",
-		"@astrojs/react": "^3.6.0",
-		"@astrojs/sitemap": "^3.1.6",
-		"@astrojs/tailwind": "^5.1.0",
+		"@astrojs/check": "^0.9.10",
+		"@astrojs/react": "^6.0.5",
+		"@astrojs/sitemap": "^3.7.4",
 		"@contentful/rich-text-react-renderer": "^15.17.0",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
 		"ackee-tracker": "^5.1.0",
-		"astro": "^4.11.0",
+		"astro": "^7.2.10",
+		"autoprefixer": "^10.4.19",
 		"contentful": "^10.2.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -26,7 +26,7 @@
 		"typescript": "^5.4.5"
 	},
 	"devDependencies": {
-		"@astrojs/partytown": "^2.1.1",
+		"@astrojs/partytown": "^2.1.7",
 		"marked": "^9.1.3"
 	}
 }

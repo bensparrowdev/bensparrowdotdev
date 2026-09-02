@@ -1,7 +1,6 @@
 ---
 export const prerender = true;
 import Layout from '../layouts/Layout.astro';
-import Playlists from '../components/about/Playlists.astro';
 import brandicons from '@assets/brandicons';
 ---
 
@@ -15,8 +14,7 @@ import brandicons from '@assets/brandicons';
     <div>
       <div class="mb-32">
         <h3>
-          I'm Ben, a passionate freelance web developer based in the vibrant
-          city of Cambridge 🇬🇧.
+          I'm Ben, a passionate freelance web developer based in Manchester 🇬🇧.
         </h3>
         <h4 class="mb-6">
           I've acquired a wide range of skills and experience from my diverse
@@ -60,7 +58,7 @@ import brandicons from '@assets/brandicons';
           <p>
             Away from my desk, I like to promote a balanced lifestyle. I'm a
             regular gym goer, Aston Villa Football Club supporter, bookworm,
-            electronic music fan (see my playlists below) and a keen traveller.
+            electronic music fan and a keen traveller.
           </p>
           <div class="flex gap-4 mt-8 social-icons">
             <p class="mb-0">Connect with me on:</p>
@@ -92,13 +90,5 @@ import brandicons from '@assets/brandicons';
         </div>
       </div>
     </div>
-
-    <section
-      class="container-lg mx-auto pb-12 animate--slide-up"
-      id="playlists"
-    >
-      <h3 class="text-left">What I listen to</h3>
-      <Playlists />
-    </section>
   </section>
 </Layout>
