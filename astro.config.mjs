@@ -17,6 +17,7 @@ export default defineConfig({
     }),
   ],
   site: 'https://bensparrow.dev',
+  trailingSlash: 'never',
   server: {
     host: true,
   },
